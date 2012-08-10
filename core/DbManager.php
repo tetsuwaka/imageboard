@@ -5,9 +5,9 @@
  * @author tetsuwaka
  */
 class DbManager extends Model {
-    
+
     protected $connection;
-    
+
     public function connect($params) {
         $params = array_merge(array(
             'dsn'      => null,
@@ -27,21 +27,21 @@ class DbManager extends Model {
 
         $this->connection = $con;
     }
-    
+
     public function getConnection() {
         return $this->connection;
     }
-    
+
     public function execute($sql, $params = array()) {
         $stmt = $this->connection->prepare($sql);
         $stmt->execute($params);
         return $stmt;
     }
-    
+
     public function fetch($sql, $params = array(), $option = PDO::FETCH_ASSOC) {
         return $this->execute($sql, $params)->fetch($option);
     }
-    
+
     public function fetchAll($sql, $params = array(), $option = PDO::FETCH_ASSOC) {
         return $this->execute($sql, $params)->fetchAll($option);
     }
