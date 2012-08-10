@@ -72,7 +72,7 @@ abstract class Controller extends Model {
         }
     }
     
-    abstract public function control(); 
+    abstract public function control($path); 
     
 }
 
