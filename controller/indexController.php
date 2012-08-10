@@ -13,6 +13,6 @@ class indexController extends Controller {
         $model = new indexModel($this);
         $params += $model->getParams();
         
-        $this->_view->render($path, $params);
+        echo $this->_view->render($path, $params);
     }
 }
