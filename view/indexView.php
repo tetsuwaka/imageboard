@@ -16,9 +16,9 @@
         <div id="main">
             <?php foreach($imagelist as $image): ?>
             <p><h3><?php echo $image['title'] . ' - ' . $image['name']; ?></h3></p>
-            <table>
+            <table border="1">
             <tr>
-                <td><img src="<?php echo $image['imageurl']; ?>"><td>
+                <td><img src="<?php echo $image['imageurl']; ?>" border="1"><td>
                 <td><ul>
                 <?php foreach($image['comments'] as $comment): ?>
                     <li><?php echo $comment['comment'] . ' - ' . $comment['name']; ?></li>
