@@ -19,7 +19,7 @@
             <p><h3><?php echo $image['title'] . ' - ' . $image['name']; ?></h3></p>
             <table border="1" width="60%">
             <tr>
-                <td><img src="<?php echo $image['imageurl']; ?>" border="1"></td>
+                <td width="480px"><img src="<?php echo $image['imageurl']; ?>" border="1"></td>
                 <td><ul>
                 <?php foreach($image['comments'] as $comment): ?>
                     <li><?php echo $comment['comment'] . ' - ' . $comment['name']; ?></li>
