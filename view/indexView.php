@@ -5,7 +5,6 @@
         <meta http-equiv="Content-Style-Type" content="text/css">
         <meta http-equiv="content-script-type" content="text/javascript">
         <!--[if IE]><script type="text/javascript" src="js/excanvas.js"></script><![endif]-->
-        <script type="text/javascript" src="js/draw.js"></script>
         <title>適当なお絵かき掲示板</title>
     </head>
 
@@ -15,43 +14,28 @@
         </div>
 
         <div id="main">
-            <h2><?php echo $hoge; ?></h2>
-        </div>
-        <canvas id="myCanvas" width="480" height="320">
-            HTML5　Canvasに対応したブラウザーを使用してください。
-        </canvas>
-        <div id="colorTemplate">
-            <table border=1 width=250 height=30>
-                <tr>
-                    <td bgcolor="red" onClick="IB.changeColor('255,0,0')"></td>
-                    <td bgcolor="blue" onClick="IB.changeColor('0,0,255')"></td>
-                    <td bgcolor="green" onClick="IB.changeColor('0,255,0')"></td>
-                    <td bgcolor="yellow" onClick="IB.changeColor('255,255,0')"></td>
-                    <td bgcolor="purple" onClick="IB.changeColor('255,0,255')"></td>
-                    <td bgcolor="#00FFFF" onClick="IB.changeColor('0,255,255')"></td>
-                    <td bgcolor="black" onClick="IB.changeColor('0,0,0')"></td>
-                    <td bgcolor="white" onClick="IB.changeColor('255,255,255')"></td>
-                    <td bgcolor="gray" onClick="IB.changeColor('192,192,192')"></td>
-                </tr>
+            <?php foreach($imagelist as $image): ?>
+            <p><h3><?php echo $image['title'] . ' - ' . $image['name']; ?></h3></p>
+            <table>
+            <tr>
+                <td><img src="<?php echo $image['imageurl']; ?>"><td>
+                <td><ul>
+                <?php foreach($image['comments'] as $comment): ?>
+                    <li><?php echo $comment['comment'] . ' - ' . $comment['name']; ?></li>
+                <?php endforeach; ?>
+                </ul></td>
+            </tr>
             </table>
+            <?php endforeach; ?>
         </div>
-
-        <div id="lineWidth">
-            <FORM>
-                線の太さ : 
-                <SELECT name="lineWidth" onChange="IB.changeLineWidth()">
-                    <OPTION value="1" selected>1</OPTION>
-                    <OPTION value="2">2</OPTION>
-                    <OPTION value="4">4</OPTION>
-                    <OPTION value="8">8</OPTION>
-                    <OPTION value="16">16</OPTION>
-                    <OPTION value="16">32</OPTION>
-                </SELECT>
-            </FORM>
-        </div>
-    
-        <div id="eraseButton">
-            <button type="button" name="erase" onclick="IB.erase()">消去</button>
-        </div>
+        
+        <script type="text/javascript">
+            var socket = io.connect('http://tetsuone.rackbox.net:8080');
+            socket.on('start', function (data) {
+                if (data.pagenum) {
+                    document.getElementById('nowprinting').innerHTML = "<a href='draw.php?" + data.pagenum + "'>参加</a>";
+                }
+            });
+        </script>
     </body>
 </html>
