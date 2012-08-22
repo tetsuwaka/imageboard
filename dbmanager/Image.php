@@ -14,7 +14,7 @@ class imageDB extends DbManager {
             $sql = "insert into comments (comment, threadid) values (:comment, :threadid)";
             $this->execute($sql, array(':comment' => $comment, ':threadid' => $threadid));
         } else {
-            $sql = "insert into comments (comment, threadid, name) values (:comment, :threadid, :name)";
+            $sql = "insert into comments (comment, thread, name) values (:comment, :threadid, :name)";
             $this->execute($sql, array(':comment' => $comment, ':threadid' => $threadid, ':name' => $name));
         }
     }
