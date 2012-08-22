@@ -28,7 +28,7 @@
             </tr>
             </table>
                 <div class="comment">
-                    <form method="POST" action="comment.php">
+                    <form method="POST" action="index.php">
                         <input type="hidden" name="threadid" value="<?php echo $image['threadid'] ?>">
                         名前：<input type="text" name="name">
                         コメント：<input type="text" name="comment">
