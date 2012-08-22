@@ -22,11 +22,16 @@
                 <td width="480px"><img src="<?php echo $image['imageurl']; ?>" border="1"></td>
                 <td width="480px"><ul>
                 <?php foreach($image['comments'] as $comment): ?>
-                    <li><?php echo $comment['comment'] . ' - ' . $comment['name']; ?></li>
+                    <li><?php echo $this->escape($comment['comment']) . ' - ' . $this->escape($comment['name']); ?></li>
                 <?php endforeach; ?>
                 </ul></td>
             </tr>
             </table>
+            <form method="POST" action="comment.php">
+                名前：<input type="text" name="name">
+                コメント：<input type="text" name="comment">
+                <input type="submit" value="送信"> 
+            </form>
             </div>
             <?php endforeach; ?>
         </div>
