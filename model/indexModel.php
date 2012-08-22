@@ -7,16 +7,16 @@ require_once '../dbmanager/Image.php';
 class indexModel extends Model {
 
     protected $dbmanager;
-    
+
     public function __construct() {
         $this->dbmanager = new imageDB();
         $this->dbmanager->connect(array(
-            'dsn' => 'mysql:dbname=imageboard;host=127.0.0.1', 
+            'dsn' => 'mysql:dbname=imageboard;host=127.0.0.1',
             'user' => 'user',
             'password' => 'pass'
         ));
     }
-    
+
     protected function getImageList() {
         $sql = 'SELECT * from thread';
         $imagelist = $this->dbmanager->fetchAll($sql);
@@ -26,7 +26,7 @@ class indexModel extends Model {
         }
         return $imagelist;
     }
-    
+
     public function getParams() {
         $imagelist = $this->getImageList();
         return array('imagelist' => $imagelist);

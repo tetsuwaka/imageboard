@@ -48,11 +48,11 @@ abstract class Controller extends Model {
     function mkTicket() {
         return sha1(uniqid() . mt_rand());
     }
-    
+
     function setSession($name, $value = null) {
         $_SESSION[$name] = $value;
     }
-    
+
     function getSession($name) {
         if (isset($_SESSION[$name])) {
             return $name;
@@ -60,7 +60,7 @@ abstract class Controller extends Model {
             return null;
         }
     }
-    
+
     function isAccept() {
         if (!isset($_POST['ticket'], $_SESSION['ticket'])) {
             return false;
@@ -71,9 +71,9 @@ abstract class Controller extends Model {
             return false;
         }
     }
-    
-    abstract public function control($path); 
-    
+
+    abstract public function control($path);
+
 }
 
 

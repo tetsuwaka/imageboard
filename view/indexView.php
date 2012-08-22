@@ -27,15 +27,18 @@
                 </ul></td>
             </tr>
             </table>
-            <form method="POST" action="comment.php">
-                名前：<input type="text" name="name">
-                コメント：<input type="text" name="comment">
-                <input type="submit" value="送信"> 
-            </form>
+                <div class="comment">
+                    <form method="POST" action="comment.php">
+                        <input type="hidden" name="threadid" value="<?php echo $image['threadid'] ?>">
+                        名前：<input type="text" name="name">
+                        コメント：<input type="text" name="comment">
+                        <input type="submit" value="送信">
+                    </form>
+                </div>
             </div>
             <?php endforeach; ?>
         </div>
-        
+
         <script type="text/javascript">
             var socket = io.connect('http://tetsuone.rackbox.net:8080');
             socket.on('start', function (data) {
