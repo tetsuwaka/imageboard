@@ -29,7 +29,7 @@
             </table>
                 <div class="comment">
                     <form method="POST" action="index.php">
-                        <input type="hiden" name="ticket" value="<?php echo $ticket; ?>">
+                        <input type="hidden" name="ticket" value="<?php echo $ticket; ?>">
                         <input type="hidden" name="threadid" value="<?php echo $image['id']; ?>">
                         名前：<input type="text" name="name">
                         コメント：<input type="text" name="comment">
