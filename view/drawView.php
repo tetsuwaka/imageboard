@@ -10,7 +10,7 @@
     <body>
         <h1>お絵かきキャンバス</h1>
 
-        <canvas id="myCanvas" width="640" height="480">
+        <canvas id="myCanvas" width="480" height="320">
             HTML5　Canvasに対応したブラウザーを使用してください。
         </canvas>
 
