@@ -5,7 +5,7 @@ create table thread (
     title varchar(255),
     name varchar(255) default 'nanashi',
     imageurl varchar(255),
-    data timestamp default current_timestamp
+    date timestamp default current_timestamp
 ) default charset=utf8;
 
 create table comments (
@@ -13,5 +13,5 @@ create table comments (
     thread integer not null,
     name varchar(255) default 'nanashi',
     comment varchar(255),
-    data timestamp default current_timestamp
+    date timestamp default current_timestamp
 ) default charset=utf8;

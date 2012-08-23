@@ -51,7 +51,7 @@
             <?php echo $pagenum; ?>
         </div>
 
-        <script src="/socket.io/socket.io.js"></script>
+        <script src="http://tetsuone.rackbox.net:8080/socket.io/socket.io.js"></script>
         <script type="text/javascript" src="http://tetsuone.rackbox.net/imageboard/js/draw.js"></script>
     </body>
 </html>
