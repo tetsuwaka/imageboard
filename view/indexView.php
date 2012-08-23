@@ -24,8 +24,11 @@
                 </div>
             </div>
             
-            <div id="write">
-                <h2><a href="write.php">お絵かきをする</a></h2>
+            <div id="draw">
+                <form method="POST" action="draw.php">
+                <input type="hidden" name="ticket" value="<?php echo $ticket; ?>">
+                <h2><input type="submit" value="お絵かきをする"></h2>
+                </form>
             </div>
 
             <?php foreach($imagelist as $image): ?>
