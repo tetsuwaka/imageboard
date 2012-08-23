@@ -15,7 +15,7 @@
         </div>
 
         <div id="main">
-            <div id="live">
+            <div id="live" align="center">
                 <div id="livewrite">
                     <img src="img/livewait.png">
                 </div>
