@@ -17,11 +17,15 @@
         <div id="main">
             <div id="live">
                 <div id="livewrite">
-                    <img src="img/livewait.png">
-                </div>
-                <div id="livefinish">
                     <img src="img/wait.png">
                 </div>
+                <div id="livefinish">
+                    <img src="img/livewait.png">
+                </div>
+            </div>
+            
+            <div id="write">
+                <h2><a href="write.php">お絵かきをする</a></h2>
             </div>
 
             <?php foreach($imagelist as $image): ?>
@@ -54,7 +58,7 @@
             var socket = io.connect('http://tetsuone.rackbox.net:8080');
             socket.on('start', function (data) {
                 if (data.pagenum) {
-                    document.getElementById('nowprinting').innerHTML = "<a href='draw.php?" + data.pagenum + "'>参加</a>";
+                    document.getElementById('livewrite').innerHTML = '<img src="livewrite.png">';
                 }
             });
         </script>
