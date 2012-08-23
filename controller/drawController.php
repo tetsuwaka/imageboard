@@ -10,7 +10,7 @@ class drawController extends Controller {
     function control($path) {
         // ポストされていたら、モデルを呼ぶ
         if ($this->isPost() && $this->isAccept()) {
-            
+            $params = array();
         } else {
             header('Location: http://tetsuone.rackbox.net/imageboard/');
         }

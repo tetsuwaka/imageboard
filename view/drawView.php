@@ -4,6 +4,7 @@
         <meta http-equiv="Content-Style-Type" content="text/css">
         <meta http-equiv="content-script-type" content="text/javascript">
         <!--[if IE]><script type="text/javascript" src="js/excanvas.js"></script><![endif]-->
+        <title>適当なお絵かき掲示板</title>
     </head>
     <body>
         <h1>お絵かきキャンバス</h1>
