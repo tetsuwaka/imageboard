@@ -1,11 +1,12 @@
-<html>
-    <head></head>
+<html lang="ja-JP">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="Content-Style-Type" content="text/css">
+        <meta http-equiv="content-script-type" content="text/javascript">
+        <!--[if IE]><script type="text/javascript" src="js/excanvas.js"></script><![endif]-->
+    </head>
     <body>
-        <div id="hoge"></div>
-        <script src="/socket.io/socket.io.js"></script>
-        <script type="text/javascript" src="http://tetsuone.rackbox.net/draw.js"></script>
-
-        <h1>HOGE</h1>
+        <h1>お絵かきキャンバス</h1>
 
         <canvas id="myCanvas" width="640" height="480">
             HTML5　Canvasに対応したブラウザーを使用してください。
@@ -49,5 +50,7 @@
             <?php echo $pagenum; ?>
         </div>
 
+        <script src="/socket.io/socket.io.js"></script>
+        <script type="text/javascript" src="http://tetsuone.rackbox.net/imageboard/js/draw.js"></script>
     </body>
 </html>
