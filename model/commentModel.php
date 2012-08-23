@@ -18,6 +18,8 @@ class commentModel extends Model {
     }
     
     public function writeComment($comment, $threadid, $name = null) {
-        $this->dbmanager->setComment($comment, $threadid, $name);
+        if (!empty($comment)) {
+            $this->dbmanager->setComment($comment, $threadid, $name);
+        }
     }
 }

@@ -4,6 +4,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta http-equiv="Content-Style-Type" content="text/css">
         <meta http-equiv="content-script-type" content="text/javascript">
+        <link href="css/index.css" rel="stylesheet" type="text/css">
         <!--[if IE]><script type="text/javascript" src="js/excanvas.js"></script><![endif]-->
         <title>適当なお絵かき掲示板</title>
     </head>
@@ -14,6 +15,15 @@
         </div>
 
         <div id="main">
+            <div id="live">
+                <div id="livewrite">
+                    <img src="img/livewait.png">
+                </div>
+                <div id="livefinish">
+                    <img src="img/wait.png">
+                </div>
+            </div>
+
             <?php foreach($imagelist as $image): ?>
             <div class="image">
             <p><h3><?php echo $this->escape($image['title']) . ' - ' .  $this->escape($image['name']); ?></h3></p>
