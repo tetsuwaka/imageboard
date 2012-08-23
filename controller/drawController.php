@@ -15,6 +15,6 @@ class drawController extends Controller {
             header('Location: http://tetsuone.rackbox.net/imageboard/');
         }
         $params = array();
-        $this->_view->render($path, $params);
+        echo $this->_view->render($path, $params);
     }
 }
