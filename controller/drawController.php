@@ -4,7 +4,7 @@
 require_once '../core/Controller.php';
 
 // 用いるModel群
-require_once '../model/drawModel.php';
+//require_once '../model/drawModel.php';
 
 class drawController extends Controller {
     function control($path) {
