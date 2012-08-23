@@ -27,7 +27,7 @@
             <div id="draw">
                 <form method="POST" action="draw.php">
                 <input type="hidden" name="ticket" value="<?php echo $ticket; ?>">
-                <h2><input type="submit" value="お絵かきをする"></h2>
+                <input type="submit" value="お絵かきをする" style="font-size: 24px;">
                 </form>
             </div>
 
