@@ -47,6 +47,10 @@
             <button type="button" name="erase" onclick="IB.erase()">消去</button>
         </div>
 
+        <div id="pagenum">
+            <?php echo $pagenum; ?>
+        </div>
+
         <script src="/socket.io/socket.io.js"></script>
         <script type="text/javascript" src="http://tetsuone.rackbox.net/imageboard/js/draw.js"></script>
     </body>

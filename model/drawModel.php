@@ -4,7 +4,7 @@ require_once '../core/Model.php';
 
 require_once '../dbmanager/Image.php';
 
-class indexModel extends Model {
+class drawModel extends Model {
 
     protected $dbmanager;
 
@@ -17,16 +17,8 @@ class indexModel extends Model {
         ));
     }
 
-    protected function getImageList() {
-        $imagelist = $this->dbmanager->getThread();
-        for ($i = 0; $i < count($imagelist); $i++) {
-            $imagelist[$i]['comments'] = $this->dbmanager->getCommentsById($imagelist[$i]['id']);
-        }
-        return $imagelist;
-    }
-
     public function getParams() {
-        $imagelist = $this->getImageList();
-        return array('imagelist' => $imagelist);
+        $threadnum = $this->dbmanager->getThreadNum();
+        return array('pagenum' => $threadnum + 1);
     }
 }
