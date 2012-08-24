@@ -12,16 +12,11 @@ io.sockets.on('connection', function (socket) {
         }
     }
     
-    socket.on('start', function(data){
-        drawList.push(data);
-        socket.broadcast.emit('start', data);
-    });
     socket.on('draw', function(data){
+        if (data.act === 'eraze') {
+            drawList = [];
+        }
         drawList.push(data);
-        socket.broadcast.emit('draw', data);
-    });
-    socket.on('eraze', function(data){
-        drawList = [];
         socket.broadcast.emit('draw', data);
     });
 });

@@ -22,7 +22,8 @@ window.addEventListener('load', function() {
         drawFlag = true;
         oldX = e.clientX - can.getBoundingClientRect().left;
         oldY = e.clientY - can.getBoundingClientRect().top;
-        socket.emit('start', {
+        socket.emit('draw', {
+            act: 'start',
             x: oldX,
             y: oldY,
             pagenum: pagenum
@@ -53,37 +54,37 @@ function draw(e) {
     oldY = y;
 
     socket.emit('draw', {
+        act: 'draw',
         x: x,
         y: y,
-        //oldX: oldX,
-        //oldy: oldY,
         color: IB.color,
         lineWidth: IB.lineWidth
     });
 }
 
-socket.on('start', function(data){
-    hozon.oldX = data.x;
-    hozon.oldY = data.y;
-});
-
 socket.on('draw', function(data){
-    var can = document.getElementById('myCanvas');
-    var context = can.getContext('2d');
-    context.strokeStyle = 'rgba(' + data.color + ',1)';
-    context.lineWidth = data.lineWidth;
-    context.lineCap = "round";
-    context.beginPath();
-    context.moveTo(hozon.oldX, hozon.oldY);
-    context.lineTo(data.x, data.y);
-    context.stroke();
-    context.closePath();
-    hozon.oldX = data.x;
-    hozon.oldY = data.y;
-});
-
-socket.on('eraze', function(data) {
-    IB.erase();
+    switch (data.act) {
+        case 'draw':
+            var can = document.getElementById('myCanvas');
+            var context = can.getContext('2d');
+            context.strokeStyle = 'rgba(' + data.color + ',1)';
+            context.lineWidth = data.lineWidth;
+            context.lineCap = "round";
+            context.beginPath();
+            context.moveTo(hozon.oldX, hozon.oldY);
+            context.lineTo(data.x, data.y);
+            context.stroke();
+            context.closePath();
+            hozon.oldX = data.x;
+            hozon.oldY = data.y;
+            
+        case 'start':
+            hozon.oldX = data.x;
+            hozon.oldY = data.y;
+            
+        case 'eraze':
+            IB.erase();
+    }
 });
 
 IB.changeColor = function(color) {
@@ -100,7 +101,7 @@ IB.erase = function() {
     var context = can.getContext('2d');
     context.clearRect(0, 0, IB.width, IB.height);
     socket.emit('draw', {
-       hoge: 'hoge' 
+       act: 'eraze'
     });
 }
 
