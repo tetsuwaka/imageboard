@@ -62,7 +62,9 @@
             var socket = io.connect('http://tetsuone.rackbox.net:8080');
             socket.on('draw', function (data) {
                 if (data.pagenum) {
-                    document.getElementById('livewrite').innerHTML = '<img src="img/livewrite.png">';
+                    var element = document.getElementById('livewrite');
+                    element.innerHTML = '<img src="img/livewrite.png">';
+                    element.addEventListener('load', (document.getElementByTagName('form')[0].submit()), false);
                 }
             });
         </script>
