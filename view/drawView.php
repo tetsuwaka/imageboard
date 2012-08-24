@@ -49,12 +49,12 @@
             </FORM>
         </div>
 
-        <div id="eraseButton">
+        <div id="buttons">
             <button type="button" name="erase" onclick="IB.erase()">消去</button>
-        </div>
-        <div id="saveButton">
             <button type="button" name="save" onclick="IB.save()">save</button>
         </div>
+
+        <br><br><br>
 
         <form method="POST" action="draw.php">
             <input type="hidden" name="ticket" value="<?php echo $ticket; ?>">
@@ -62,7 +62,9 @@
             名前：<input type="text" name="name"> <br>
             <input type="submit" value="投稿する" style="font-size: 18px;">
         </form>
-        
+
+        <p><h3>セーブしてから投稿してください。</h3></p>
+
         <div id="pagenum">
             <?php echo $pagenum; ?>
         </div>
