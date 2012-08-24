@@ -82,6 +82,10 @@ socket.on('draw', function(data){
     hozon.oldY = data.y;
 });
 
+socket.on('eraze', function(data) {
+    IB.erase();
+});
+
 IB.changeColor = function(color) {
     IB.color = color;
 }
@@ -95,6 +99,9 @@ IB.erase = function() {
     var can = document.getElementById('myCanvas');
     var context = can.getContext('2d');
     context.clearRect(0, 0, IB.width, IB.height);
+    socket.emit('draw', {
+       hoge: 'hoge' 
+    });
 }
 
 // 保存処理
