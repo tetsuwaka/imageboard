@@ -14,7 +14,8 @@
             <canvas id="myCanvas" width="480" height="320">
                 HTML5　Canvasに対応したブラウザーを使用してください。
             </canvas>
-            <div id="save">
+            <div id="save" width="480" height="320">
+                <img src="img/save.png">
             </div>
         </didv>
 
@@ -57,7 +58,7 @@
 
         <form method="POST" action="draw.php">
             <input type="hidden" name="ticket" value="<?php echo $ticket; ?>">
-            <input type="hideen" name="image" value="">
+            <input type="hidden" name="image" value="null">
             名前：<input type="text" name="name"> <br>
             <input type="submit" value="投稿する" style="font-size: 18px;">
         </form>
