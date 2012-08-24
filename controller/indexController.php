@@ -23,9 +23,14 @@ class indexController extends Controller {
 
         $params = array('ticket' => $ticket);
         $this->setSession('ticket', $ticket);
-
+        
+        $num = $this->getGet('number');
+        if (!empty($num)) {
+            $params['number'] = $num;
+        }
+        
         $model = new indexModel($this);
-        $params += $model->getParams();
+        $params += $model->getParams($num);
         echo $this->_view->render($path, $params);
     }
 }

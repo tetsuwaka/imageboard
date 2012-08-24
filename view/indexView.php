@@ -56,6 +56,10 @@
             </div>
             <?php endforeach; ?>
         </div>
+        
+        <div id="next">
+            <a href="index.php?number=<?php echo $number + 1; ?>">次へ</a>
+        </div>
 
         <script src="http://tetsuone.rackbox.net:8080/socket.io/socket.io.js"></script>
         <script type="text/javascript">

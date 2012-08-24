@@ -17,16 +17,20 @@ class indexModel extends Model {
         ));
     }
 
-    protected function getImageList() {
-        $imagelist = $this->dbmanager->getThread();
+    protected function getImageList($num) {
+        if (empty($num)) {
+            $imagelist = $this->dbmanager->getThread();
+        } else {
+            $imagelist = $this->dbmanager->getThread($num * 5);
+        }
         for ($i = 0; $i < count($imagelist); $i++) {
             $imagelist[$i]['comments'] = $this->dbmanager->getCommentsById($imagelist[$i]['id']);
         }
         return $imagelist;
     }
 
-    public function getParams() {
-        $imagelist = $this->getImageList();
+    public function getParams($num) {
+        $imagelist = $this->getImageList($num);
         return array('imagelist' => $imagelist);
     }
 }
