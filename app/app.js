@@ -8,7 +8,7 @@ io.sockets.on('connection', function (socket) {
     
     if (drawList.length > 0) {
         for (var i in drawList) {
-            socket.send('draw', drawList[i]);
+            socket.emit('draw', drawList[i]);
         }
     }
     
@@ -18,6 +18,7 @@ io.sockets.on('connection', function (socket) {
         }
         drawList.push(data);
         socket.broadcast.emit('draw', data);
+        console.log(data);
     });
 });
 

@@ -63,6 +63,7 @@ function draw(e) {
 }
 
 socket.on('draw', function(data){
+    console.log(data);
     switch (data.act) {
         case 'draw':
             var can = document.getElementById('myCanvas');
