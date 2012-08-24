@@ -57,6 +57,7 @@
             <?php endforeach; ?>
         </div>
 
+        <script src="http://tetsuone.rackbox.net:8080/socket.io/socket.io.js"></script>
         <script type="text/javascript">
             var socket = io.connect('http://tetsuone.rackbox.net:8080');
             socket.on('draw', function (data) {
