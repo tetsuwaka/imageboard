@@ -110,10 +110,11 @@ IB.erase = function(flag) {
     }
 }
 
-// 保存処理
-IB.saveData = function() {
+// セーブ
+IB.save = function() {
     var can = document.getElementById('myCanvas');
     var d = can.toDataURL('image/png');
-    d = d.replace('image/png', 'image/octet-stream');
-    window.open(d, 'save');
+    document.getElementById('save').innerHTML = "<img src=" + d + ">";
+    var tmp = document.getElementsByName('image');
+    tmp[0].value = d;
 }

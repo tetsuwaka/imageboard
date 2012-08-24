@@ -10,9 +10,13 @@
     <body>
         <h1>お絵かきキャンバス</h1>
 
-        <canvas id="myCanvas" width="480" height="320">
-            HTML5　Canvasに対応したブラウザーを使用してください。
-        </canvas>
+        <div id="canvas">
+            <canvas id="myCanvas" width="480" height="320">
+                HTML5　Canvasに対応したブラウザーを使用してください。
+            </canvas>
+            <div id="save">
+            </div>
+        </didv>
 
         <div id="colorTemplate">
             <table border=1 width=250 height=30>
@@ -47,16 +51,20 @@
         <div id="eraseButton">
             <button type="button" name="erase" onclick="IB.erase()">消去</button>
         </div>
-
-        <div id="pagenum">
-            <?php echo $pagenum; ?>
+        <div id="saveButton">
+            <button type="button" name="save" onclick="IB.save()">save</button>
         </div>
 
         <form method="POST" action="draw.php">
             <input type="hidden" name="ticket" value="<?php echo $ticket; ?>">
+            <input type="hideen" name="image" value="">
             名前：<input type="text" name="name"> <br>
             <input type="submit" value="投稿する" style="font-size: 18px;">
         </form>
+        
+        <div id="pagenum">
+            <?php echo $pagenum; ?>
+        </div>
 
         <script src="http://tetsuone.rackbox.net:8080/socket.io/socket.io.js"></script>
         <script type="text/javascript" src="http://tetsuone.rackbox.net/imageboard/js/draw.js"></script>
