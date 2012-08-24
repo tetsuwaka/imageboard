@@ -64,7 +64,7 @@
                 if (data.pagenum) {
                     var element = document.getElementById('livewrite');
                     element.innerHTML = '<img src="img/livewrite.png">';
-                    element.addEventListener('load', (document.getElementsByTagName('form')[0].submit()), false);
+                    element.addEventListener('click', (document.getElementsByTagName('form')[0].submit()), false);
                 }
             });
         </script>
