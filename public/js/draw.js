@@ -83,7 +83,7 @@ socket.on('draw', function(data){
             hozon.oldY = data.y;
             
         case 'eraze':
-            IB.erase();
+            IB.erase(1);
     }
 });
 
@@ -96,13 +96,15 @@ IB.changeLineWidth = function() {
     IB.lineWidth = dom[0].value;
 }
 
-IB.erase = function() {
+IB.erase = function(flag) {
     var can = document.getElementById('myCanvas');
     var context = can.getContext('2d');
     context.clearRect(0, 0, IB.width, IB.height);
-    socket.emit('draw', {
-       act: 'eraze'
-    });
+    if(flag !== 1) {
+        socket.emit('draw', {
+            act: 'eraze'
+        });
+    }
 }
 
 // 保存処理
