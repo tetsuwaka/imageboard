@@ -8,7 +8,7 @@ io.sockets.on('connection', function (socket) {
     
     if (drawList.length > 0) {
         for (var i in drawList) {
-            socket.emit('draw', drawList[i]);
+            socket.send('draw', drawList[i]);
         }
     }
     
