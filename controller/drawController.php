@@ -14,7 +14,12 @@ class drawController extends Controller {
         } else {
             header('Location: http://tetsuone.rackbox.net/imageboard/');
         }
-        $params = array();
+
+        $ticket = $this->mkTicket();
+
+        $params = array('ticket' => $ticket);
+        $this->setSession('ticket', $ticket);
+
         $model = new drawModel($this);
         $params += $model->getParams();
         echo $this->_view->render($path, $params);

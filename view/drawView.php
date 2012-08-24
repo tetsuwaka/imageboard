@@ -52,6 +52,12 @@
             <?php echo $pagenum; ?>
         </div>
 
+        <form method="POST" action="draw.php">
+            <input type="hidden" name="ticket" value="<?php echo $ticket; ?>">
+            名前：<input type="text" name="name"> <br>
+            <input type="submit" value="投稿する" style="font-size: 18px;">
+        </form>
+
         <script src="http://tetsuone.rackbox.net:8080/socket.io/socket.io.js"></script>
         <script type="text/javascript" src="http://tetsuone.rackbox.net/imageboard/js/draw.js"></script>
     </body>
