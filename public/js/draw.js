@@ -63,9 +63,9 @@ function draw(e) {
 }
 
 socket.on('draw', function(data){
-    console.log(data);
     switch (data.act) {
-        case 'draw':
+        case "draw":
+            console.log(data);
             var can = document.getElementById('myCanvas');
             var context = can.getContext('2d');
             context.strokeStyle = 'rgba(' + data.color + ',1)';
@@ -79,11 +79,11 @@ socket.on('draw', function(data){
             hozon.oldX = data.x;
             hozon.oldY = data.y;
             
-        case 'start':
+        case "start":
             hozon.oldX = data.x;
             hozon.oldY = data.y;
             
-        case 'eraze':
+        case "eraze":
             IB.erase(1);
     }
 });
