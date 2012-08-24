@@ -65,6 +65,12 @@
 
         <p><h3>セーブしてから投稿してください。</h3></p>
 
+        <br><br>
+
+        <div id="return">
+            <a href="index.php">トップに戻る</a>
+        </div>
+
         <div id="pagenum">
             <?php echo $pagenum; ?>
         </div>
