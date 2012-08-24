@@ -60,7 +60,7 @@
             <input type="hidden" name="ticket" value="<?php echo $ticket; ?>">
             <input type="hidden" name="image" value="null">
             名前：<input type="text" name="name"> <br>
-            <input type="submit" value="投稿する" style="font-size: 18px;">
+            <input type="submit" value="投稿する" style="font-size: 18px;" onclick="IB.move()">
         </form>
 
         <p><h3>セーブしてから投稿してください。</h3></p>

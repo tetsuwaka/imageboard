@@ -87,6 +87,10 @@ socket.on('draw', function(data){
         case "eraze":
             IB.erase(1);
             break;
+            
+        case "move":
+            IB.moveTop();
+            break;
     }
 });
 
@@ -117,4 +121,15 @@ IB.save = function() {
     document.getElementById('save').innerHTML = "<img src=" + d + ">";
     var tmp = document.getElementsByName('image');
     tmp[0].value = d;
+}
+
+IB.move = function() {
+    socket.emit('draw', {
+        act: 'move'
+    });
+}
+
+// Topに移動
+IB.moveTop = function() {
+    location.href = 'index.php';
 }

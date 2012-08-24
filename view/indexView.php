@@ -59,7 +59,7 @@
 
         <script type="text/javascript">
             var socket = io.connect('http://tetsuone.rackbox.net:8080');
-            socket.on('start', function (data) {
+            socket.on('draw', function (data) {
                 if (data.pagenum) {
                     document.getElementById('livewrite').innerHTML = '<img src="livewrite.png">';
                 }

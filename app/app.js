@@ -15,7 +15,7 @@ io.sockets.on('connection', function (socket) {
     socket.on('draw', function(data){
         drawList.push(data);
         socket.broadcast.emit('draw', data);
-        if (data.act === 'eraze') {
+        if (data.act === 'eraze' || data.act === 'move') {
             drawList = [];
         }
     });
