@@ -18,7 +18,6 @@ io.sockets.on('connection', function (socket) {
         }
         drawList.push(data);
         socket.broadcast.emit('draw', data);
-        console.log(data);
     });
 });
 
