@@ -59,12 +59,15 @@
 
         <script src="http://tetsuone.rackbox.net:8080/socket.io/socket.io.js"></script>
         <script type="text/javascript">
+            function pushSubmit() {
+                document.getElementsByTagName('form')[0].submit();
+            }
             var socket = io.connect('http://tetsuone.rackbox.net:8080');
             socket.on('draw', function (data) {
                 if (data.pagenum) {
                     var element = document.getElementById('livewrite');
                     element.innerHTML = '<img src="img/livewrite.png">';
-                    element.addEventListener('click', document.getElementsByTagName('form')[0].submit(), false);
+                    element.addEventListener('click', pushSubmit(), false);
                 }
             });
         </script>
