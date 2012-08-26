@@ -6,7 +6,7 @@ class imageDB extends DbManager {
 
     public function getThread($num = 0) {
         $sql = "select * from thread order by date desc limit 5 offset :num";
-        return $this->fetchAll($sql, array(';num' => $num));
+        return $this->fetchAll($sql, array(':num' => $num));
     }
 
     public function getCommentsById($threadid) {
