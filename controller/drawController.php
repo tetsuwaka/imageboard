@@ -15,7 +15,7 @@ class drawController extends Controller {
             if (!empty($image)) {
                 $name = $this->getPost('name');
                 $saveImageModel = new saveImageModel($this);
-                $saveImageMode->save($image, $name);
+                $saveImageModel->save($image, $name);
                 header('Location: http://tetsuone.rackbox.net/imageboard/');
             }
         } else {
