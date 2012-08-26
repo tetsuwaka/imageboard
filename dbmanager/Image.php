@@ -24,8 +24,18 @@ class imageDB extends DbManager {
         }
     }
 
+    public function setThread($image, $name) {
+        if (empty($name)) {
+            $sql = "insert into thread (imageurl) values (:imageurl)";
+            $this->execute($sql, array(':imageurl' => $image));
+        } else {
+            $sql = "insert into thread (imageurl, name) values (:imageurl, :name)";
+            $this->execute($sql, array(':imageurl' => $image, ':name' => $name));
+        }
+    }
+    
     public function getThreadNum() {
-        $sql = "select count(*) from thread";
+        $sql = "select id from thread by id desc";
         $numResult = $this->fetch($sql, array(), PDO::FETCH_NUM);
         return $numResult[0];
     }
