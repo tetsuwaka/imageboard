@@ -11,8 +11,8 @@ class drawController extends Controller {
     function control($path) {
         // ポストされていたら、モデルを呼ぶ
         if ($this->isPost() && $this->isAccept()) {
-            if (!empty($this->getPost('image'))) {
-                $image = $this->getPost('image');
+            $image = $this->getPost('image');
+            if (!empty($image)) {
                 $name = $this->getPost('name');
                 $saveImageModel = new saveImageModel($this);
                 $saveImageMode->save($image, $name);
