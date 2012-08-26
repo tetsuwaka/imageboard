@@ -22,9 +22,9 @@ class saveImageModel extends Model {
 
         $image = str_replace('data:image/png;base64,', '', $image);
         $fileName = 'img/' . $threadnum . '.png';
-        $fp = fopen($fileName, w);
-        fwrite($fp,base64_decode($image));
-        fp.close();
+        $fp = fopen($fileName, 'w');
+        fwrite($fp, base64_decode($image));
+        fclose($fp);
 
         $this->dbmanager->setThread($fileName, $name);
     }
