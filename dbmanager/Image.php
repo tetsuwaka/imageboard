@@ -35,7 +35,7 @@ class imageDB extends DbManager {
     }
     
     public function getThreadNum() {
-        $sql = "select id from thread by id desc";
+        $sql = "select id from thread order by id desc";
         $numResult = $this->fetch($sql, array(), PDO::FETCH_NUM);
         return $numResult[0];
     }
