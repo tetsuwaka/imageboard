@@ -59,6 +59,7 @@
         <form method="POST" action="draw.php">
             <input type="hidden" name="ticket" value="<?php echo $ticket; ?>">
             <input type="hidden" name="image" value="null">
+            タイトル：<input type="text" name="title"> <br>
             名前：<input type="text" name="name"> <br>
             <input type="submit" value="投稿する" style="font-size: 18px;" onclick="IB.move()">
         </form>

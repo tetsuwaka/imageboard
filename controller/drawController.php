@@ -13,9 +13,10 @@ class drawController extends Controller {
         if ($this->isPost() && $this->isAccept()) {
             $image = $this->getPost('image');
             if (!empty($image)) {
+                $title = $this->getPost('title');
                 $name = $this->getPost('name');
                 $saveImageModel = new saveImageModel($this);
-                $saveImageModel->save($image, $name);
+                $saveImageModel->save($image, $title, $name);
                 header('Location: http://tetsuone.rackbox.net/imageboard/');
             }
         } else {

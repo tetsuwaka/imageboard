@@ -24,13 +24,13 @@ class imageDB extends DbManager {
         }
     }
 
-    public function setThread($image, $name) {
+    public function setThread($image, $title, $name) {
         if (empty($name)) {
-            $sql = "insert into thread (imageurl) values (:imageurl)";
-            $this->execute($sql, array(':imageurl' => $image));
+            $sql = "insert into thread (imageurl, title) values (:imageurl, :title)";
+            $this->execute($sql, array(':imageurl' => $image, ':title' => $title));
         } else {
             $sql = "insert into thread (imageurl, name) values (:imageurl, :name)";
-            $this->execute($sql, array(':imageurl' => $image, ':name' => $name));
+            $this->execute($sql, array(':imageurl' => $image, ':title' => $title, ':name' => $name));
         }
     }
     

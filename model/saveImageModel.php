@@ -17,7 +17,7 @@ class saveImageModel extends Model {
         ));
     }
 
-    public function save($image, $name) {
+    public function save($image, $title, $name) {
         $threadnum = $this->dbmanager->getThreadNum() + 1;
 
         $image = str_replace('data:image/png;base64,', '', $image);
@@ -26,6 +26,6 @@ class saveImageModel extends Model {
         fwrite($fp, base64_decode($image));
         fclose($fp);
 
-        $this->dbmanager->setThread($fileName, $name);
+        $this->dbmanager->setThread($fileName, $title, $name);
     }
 }
