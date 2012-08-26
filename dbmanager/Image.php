@@ -5,8 +5,8 @@ require_once '../core/DbManager.php';
 class imageDB extends DbManager {
 
     public function getThread($num = 0) {
-        $sql = "select * from thread order by date desc limit 5 offset :num";
-        return $this->fetchAll($sql, array(':num' => $num));
+        $sql = "select * from thread order by date desc limit 5 offset {$num}";
+        return $this->fetchAll($sql);
     }
 
     public function getCommentsById($threadid) {
