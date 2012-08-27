@@ -64,7 +64,7 @@
 
         <script src="http://tetsuone.rackbox.net:8080/socket.io/socket.io.js"></script>
         <script type="text/javascript">
-            var canvas = document.getElementById('livewrite');
+            var canvas = document.getElementById('myCanvas');
             var ctx = canvas.getContext('2d');
             var img = new Image();
             img.src = "img/livewait.png";
@@ -78,7 +78,7 @@
             var socket = io.connect('http://tetsuone.rackbox.net:8080');
             socket.on('draw', function (data) {
                 if (data.pagenum == <?php echo $threadnum; ?>) {
-                    var element = document.getElementById('myCanvas');
+                    var element = document.getElementById('livewrite');
                     element.innerHTML = '<img src="img/livewrite.png">';
                     element.addEventListener('click', pushSubmit, false);
                 }
