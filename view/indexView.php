@@ -76,6 +76,8 @@
                 if (data.act === 'move') {
                     var element = document.getElementById('livefinish');
                     element.innerHTML = "<img src=" + data.image + ">";
+                    var element = document.getElementById('livewrite');
+                    element.innerHTML = '<img src="img/wait.png">';
                 }
             });
         </script>
