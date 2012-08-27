@@ -83,6 +83,8 @@
                     element.addEventListener('click', pushSubmit, false);
                 }
                 if (data.act === 'move') {
+                    ctx.clearRect(0, 0, 320, 240);
+                    var img = new Image();
                     img.src = data.image;
                     img.onload = function() {
                         ctx.drawImage(img, 0, 0, 480, 360, 0, 0, 320, 240);
