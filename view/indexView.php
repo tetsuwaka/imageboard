@@ -20,6 +20,8 @@
                     <img src="img/wait.png">
                 </div>
                 <div id="livefinish">
+                    <canvas id="myCanvas" width="320" height="240">
+                    </canvas>
                     <img src="img/livewait.png">
                 </div>
             </div>
@@ -63,6 +65,14 @@
 
         <script src="http://tetsuone.rackbox.net:8080/socket.io/socket.io.js"></script>
         <script type="text/javascript">
+            var canvas = document.getElementById('livewrite');
+            var ctx = canvas.getContext('2d');
+            var img = new Image();
+            img.src = "img/livewait.png";
+            img.onload = function() {
+                ctx.drawImage(img, 0, 0, 320, 240, 0, 0, 320, 240);
+            }
+            
             function pushSubmit() {
                 document.getElementsByTagName('form')[0].submit();
             }
@@ -74,8 +84,10 @@
                     element.addEventListener('click', pushSubmit, false);
                 }
                 if (data.act === 'move') {
-                    var element = document.getElementById('livefinish');
-                    element.innerHTML = "<img src=" + data.image + ">";
+                    img.src = data.image;
+                    img.onload = function() {
+                        ctx.drawImage(img, 0, 0, 480, 360, 0, 0, 320, 240);
+                    }
                     var element = document.getElementById('livewrite');
                     element.innerHTML = '<img src="img/wait.png">';
                 }
