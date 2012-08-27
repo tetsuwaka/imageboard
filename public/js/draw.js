@@ -124,8 +124,11 @@ IB.save = function() {
 }
 
 IB.move = function() {
+    var can = document.getElementById('myCanvas');
+    var d = can.toDataURL('image/png');
     socket.emit('draw', {
-        act: 'move'
+        act: 'move',
+        image: d
     });
 }
 

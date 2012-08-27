@@ -73,6 +73,10 @@
                     element.innerHTML = '<img src="img/livewrite.png">';
                     element.addEventListener('click', pushSubmit, false);
                 }
+                if (data.act === 'move') {
+                    var element = document.getElementById('livewrite');
+                    element.innerHTML = "<img src=" + data.image + ">";
+                }
             });
         </script>
     </body>
