@@ -130,6 +130,7 @@ IB.move = function() {
         act: 'move',
         image: d
     });
+    IB.erase();
 }
 
 // Topに移動

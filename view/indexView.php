@@ -74,7 +74,7 @@
                     element.addEventListener('click', pushSubmit, false);
                 }
                 if (data.act === 'move') {
-                    var element = document.getElementById('livewrite');
+                    var element = document.getElementById('livefinish');
                     element.innerHTML = "<img src=" + data.image + ">";
                 }
             });
