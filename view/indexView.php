@@ -86,9 +86,7 @@
                     ctx.clearRect(0, 0, 320, 240);
                     var img = new Image();
                     img.src = data.image;
-                    img.onload = function() {
-                        ctx.drawImage(img, 0, 0, 480, 360, 0, 0, 320, 240);
-                    }
+                    ctx.drawImage(img, 0, 0, 480, 360, 0, 0, 320, 240);
                     var element = document.getElementById('livewrite');
                     element.innerHTML = '<img src="img/wait.png">';
                 }
