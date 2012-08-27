@@ -68,7 +68,7 @@
             }
             var socket = io.connect('http://tetsuone.rackbox.net:8080');
             socket.on('draw', function (data) {
-                if (data.pagenum) {
+                if (data.pagenum == <?php echo $threadnum; ?>) {
                     var element = document.getElementById('livewrite');
                     element.innerHTML = '<img src="img/livewrite.png">';
                     element.addEventListener('click', pushSubmit, false);

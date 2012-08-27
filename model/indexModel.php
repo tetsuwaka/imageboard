@@ -31,6 +31,7 @@ class indexModel extends Model {
 
     public function getParams($num) {
         $imagelist = $this->getImageList($num);
-        return array('imagelist' => $imagelist);
+        $threadnum = $this->dbmanager->getThreadNum() + 1;
+        return array('imagelist' => $imagelist, 'threadnum' => $threadnum);
     }
 }
