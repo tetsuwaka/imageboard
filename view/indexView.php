@@ -22,7 +22,6 @@
                 <div id="livefinish">
                     <canvas id="myCanvas" width="320" height="240">
                     </canvas>
-                    <img src="img/livewait.png">
                 </div>
             </div>
             
