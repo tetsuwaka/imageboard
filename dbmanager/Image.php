@@ -29,7 +29,7 @@ class imageDB extends DbManager {
             $sql = "insert into thread (imageurl, title) values (:imageurl, :title)";
             $this->execute($sql, array(':imageurl' => $image, ':title' => $title));
         } else {
-            $sql = "insert into thread (imageurl, name) values (:imageurl, :name)";
+            $sql = "insert into thread (imageurl, title, name) values (:imageurl, :title, :name)";
             $this->execute($sql, array(':imageurl' => $image, ':title' => $title, ':name' => $name));
         }
     }
