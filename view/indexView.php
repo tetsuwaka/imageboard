@@ -35,8 +35,8 @@
 
             <?php foreach($imagelist as $image): ?>
             <div class="image">
-            <p><h3><?php echo $this->escape($image['title']) . ' - ' .  $this->escape($image['name']); ?></h3></p>
-            <table border="1">
+            <p><h2><?php echo $this->escape($image['title']) . ' - ' .  $this->escape($image['name']); ?></h2></p>
+            <table border="1" align="center">
             <tr>
                 <td width="480px"><img src="<?php echo $image['imageurl']; ?>" border="1"></td>
                 <td width="480px"><ul>
