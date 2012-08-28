@@ -9,7 +9,9 @@
     </head>
     <body>
         <div id="all">
-        <h1>お絵かきキャンバス</h1>
+        <div id="header">
+            <h1>お絵かきキャンバス</h1>
+        </div>
 
         <div id="canvas">
             <canvas id="myCanvas" width="480" height="320">
@@ -57,6 +59,7 @@
 
         <br><br><br>
 
+        <div id="form">
         <form method="POST" action="draw.php">
             <input type="hidden" name="ticket" value="<?php echo $ticket; ?>">
             <input type="hidden" name="image" value="null">
@@ -64,6 +67,7 @@
             名前：<input type="text" name="name"> <br>
             <input type="submit" value="投稿する" style="font-size: 18px;" onclick="IB.move()">
         </form>
+        </div>
 
         <p><h3>セーブしてから投稿してください。</h3></p>
 
