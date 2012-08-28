@@ -39,11 +39,11 @@
             <table border="1" align="center">
             <tr>
                 <td width="480px"><img src="<?php echo $image['imageurl']; ?>" border="1"></td>
-                <td width="480px"><ul>
+                <td width="480px"><div id="comments"><ul>
                 <?php foreach($image['comments'] as $comment): ?>
                     <li><?php echo $this->escape($comment['comment']) . ' - ' . $this->escape($comment['name']); ?></li>
                 <?php endforeach; ?>
-                </ul></td>
+                </ul></div></td>
             </tr>
             </table>
                 <div class="comment">
