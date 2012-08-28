@@ -27,6 +27,8 @@ class indexController extends Controller {
         $num = $this->getGet('number');
         if (!empty($num)) {
             $params['number'] = $num;
+        } else {
+            $params['number'] = 0;
         }
         
         $model = new indexModel($this);
