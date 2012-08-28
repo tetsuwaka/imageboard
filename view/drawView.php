@@ -18,7 +18,15 @@
                 HTML5　Canvasに対応したブラウザーを使用してください。
             </canvas>
             <canvas id="save" width="240" height="160">
-                <img src="img/save2.png">
+                <script type="text/javascript">
+                    var canvas = document.getElementById('save');
+                    var ctx = canvas.getContext('2d');
+                    var img = new Image();
+                    img.src = "img/save2.png";
+                    img.onload = function() {
+                        ctx.drawImage(img, 0, 0, 240, 160, 0, 0, 240, 160);
+                    }
+                </script>
             </canvas>
         </div>
 
