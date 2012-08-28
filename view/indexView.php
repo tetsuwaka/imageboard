@@ -10,6 +10,7 @@
     </head>
 
     <body>
+        <div id="all">
         <div id="header">
             <h1>適当なお絵かき掲示板</a></h1>
         </div>
@@ -92,5 +93,6 @@
                 }
             });
         </script>
+        </div>
     </body>
 </html>

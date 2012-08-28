@@ -8,6 +8,7 @@
         <title>適当なお絵かき掲示板</title>
     </head>
     <body>
+        <div id="all">
         <h1>お絵かきキャンバス</h1>
 
         <div id="canvas">
@@ -17,7 +18,7 @@
             <div id="save" width="480" height="320">
                 <img src="img/save.png">
             </div>
-        </didv>
+        </div>
 
         <div id="colorTemplate">
             <table border=1 width=250 height=30>
@@ -78,5 +79,6 @@
 
         <script src="http://tetsuone.rackbox.net:8080/socket.io/socket.io.js"></script>
         <script type="text/javascript" src="http://tetsuone.rackbox.net/imageboard/js/draw.js"></script>
+        </div>
     </body>
 </html>
