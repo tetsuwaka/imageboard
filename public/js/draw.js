@@ -78,16 +78,16 @@ socket.on('draw', function(data){
             hozon.oldX = data.x;
             hozon.oldY = data.y;
             break;
-            
+
         case "start":
             hozon.oldX = data.x;
             hozon.oldY = data.y;
             break;
-            
+
         case "eraze":
             IB.erase(1);
             break;
-            
+
         case "move":
             IB.moveTop();
             break;
@@ -118,7 +118,13 @@ IB.erase = function(flag) {
 IB.save = function() {
     var can = document.getElementById('myCanvas');
     var d = can.toDataURL('image/png');
-    document.getElementById('save').innerHTML = "<img src=" + d + ">";
+
+    var canvas = document.getElementById('save');
+    var ctx = canvas.getContext('2d');
+    var img = new Image();
+    img.src = d;
+    ctx.drawImage(img, 0, 0, 480, 320, 0, 0, 240, 160);
+
     var tmp = document.getElementsByName('image');
     tmp[0].value = d;
 }

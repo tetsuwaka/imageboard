@@ -17,9 +17,9 @@
             <canvas id="myCanvas" width="480" height="320">
                 HTML5　Canvasに対応したブラウザーを使用してください。
             </canvas>
-            <div id="save" width="480" height="320">
-                <img src="img/save.png">
-            </div>
+            <canvas id="save" width="240" height="160">
+                <img src="img/save2.png">
+            </canvas>
         </div>
 
         <div id="colorTemplate">
