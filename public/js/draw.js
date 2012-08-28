@@ -121,6 +121,7 @@ IB.save = function() {
 
     var canvas = document.getElementById('save');
     var ctx = canvas.getContext('2d');
+    ctx.clearRect(0, 0, 240, 160);
     var img = new Image();
     img.src = d;
     ctx.drawImage(img, 0, 0, 480, 320, 0, 0, 240, 160);
