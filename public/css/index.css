@@ -1,7 +1,40 @@
+body {
+    background-image:url(../img/back.gif);
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#all {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border-left: 1px solid #000000;
+    border-right: 1px solid #000000;
+    height: 1000%;
+    margin: auto;
+    padding: 0;
+    text-align: center;
+    width: 1000px;
+}
+
+#header {
+    color: #FFFFFF;
+    background: none repeat scroll 0 0 #000000;
+    border-bottom: 1px solid #888888;
+    height: 60px;
+    margin: 0;
+    padding: 30px;
+}
+
 #live {
     height: 240px;
     width: 700px;
     margin-left : auto ; margin-right : auto ;
+    padding: 20px;
 }
 
 #livewrite {
@@ -12,6 +45,28 @@
     float: right;
 }
 
+input {
+    padding: 3px 10px;
+}
+
+#comments {
+    text-align: left;
+    margin: auto;
+    width: 400px;
+}
+
+#draw {
+    padding: 20px;
+}
+
 .image {
+    border-bottom: 1px solid #888888;
+    border-top: 1px solid #888888;
+    padding: 20px 0;
     margin-left : auto ; margin-right : auto ;
+}
+
+#next {
+    font-size: 20px;
+    padding: 20px;
 }
