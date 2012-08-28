@@ -124,8 +124,9 @@ IB.save = function() {
     ctx.clearRect(0, 0, 240, 160);
     var img = new Image();
     img.src = d;
-    ctx.drawImage(img, 0, 0, 480, 320, 0, 0, 240, 160);
-
+    img.onload = function() {
+        ctx.drawImage(img, 0, 0, 480, 320, 0, 0, 240, 160);
+    }
     var tmp = document.getElementsByName('image');
     tmp[0].value = d;
 }
