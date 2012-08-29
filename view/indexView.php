@@ -5,6 +5,7 @@
         <meta http-equiv="Content-Style-Type" content="text/css">
         <meta http-equiv="content-script-type" content="text/javascript">
         <link href="css/index.css" rel="stylesheet" type="text/css">
+        <script type="text/javascript" src="jquery-1.7.2.min.js"></script>
         <!--[if IE]><script type="text/javascript" src="js/excanvas.js"></script><![endif]-->
         <title>適当なお絵かき掲示板</title>
     </head>
@@ -47,13 +48,16 @@
             </tr>
             </table>
                 <div class="comment">
-                    <form method="POST" action="index.php">
+                    <div id ="<?php echo $image['id']; ?>">
+<!--                    <form method="POST" action="index.php">-->
                         <input type="hidden" name="ticket" value="<?php echo $ticket; ?>">
                         <input type="hidden" name="threadid" value="<?php echo $image['id']; ?>">
                         名前：<input type="text" name="name">
                         コメント：<input type="text" name="comment">
-                        <input type="submit" value="送信">
-                    </form>
+                        <button type="button" name="commentSend" onclick="">sendComment(<?php echo $image['id']; ?>, <?php echo $ticket; ?>)</button>
+<!--                        <input type="submit" value="送信">-->
+<!--                    </form>-->
+                    </div>
                 </div>
             </div>
             <?php endforeach; ?>
@@ -94,6 +98,24 @@
                     element.innerHTML = '<img src="img/wait.png">';
                 }
             });
+            function sendComment(threadid, ticket) {
+                var ele = document.getElementById(threadid);
+                var name = ele.getElementByName('name')[0];
+                var comment = ele.getElementByName('comment')[0];
+                $.ajax({
+                    type: 'post',
+                    url: 'comment.php',
+                    data: {
+                        threadid: threadid,
+                        ticket: ticket,
+                        name: name,
+                        comment: comment
+                    },
+                    success: function(data){
+                        document.getElementById(threadid).innerHTML = data;
+                    }
+                });
+            }
         </script>
         </div>
     </body>

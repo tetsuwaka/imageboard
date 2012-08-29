@@ -16,10 +16,14 @@ class commentModel extends Model {
             'password' => 'pass'
         ));
     }
-    
+
     public function writeComment($comment, $threadid, $name = null) {
         if (!empty($comment)) {
             $this->dbmanager->setComment($comment, $threadid, $name);
         }
+    }
+
+    public function getCommentList($threadid) {
+        return $this->dbmanager->getCommentsById($threadid);
     }
 }
