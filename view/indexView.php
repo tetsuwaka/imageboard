@@ -49,14 +49,14 @@
             </table>
                 <div class="comment">
                     <div id ="<?php echo $image['id']; ?>">
-<!--                    <form method="POST" action="index.php">-->
+                    <form id="form-<?php echo $image['id']; ?>">
                         <input type="hidden" name="ticket" value="<?php echo $ticket; ?>">
                         <input type="hidden" name="threadid" value="<?php echo $image['id']; ?>">
                         名前：<input type="text" name="name">
                         コメント：<input type="text" name="comment">
                         <button type="button" name="commentSend" onclick="sendComment(<?php echo $image['id']; ?>, '<?php echo $ticket; ?>')">送信</button>
 <!--                        <input type="submit" value="送信">-->
-<!--                    </form>-->
+                    </form>
                     </div>
                 </div>
             </div>
@@ -102,6 +102,7 @@
                 var ele = document.getElementById(threadid);
                 var name = ele.getElementsByTagName('input')[2].value;
                 var comment = ele.getElementsByTagName('input')[3].value;
+                document.getElementById('form-' + threadid).reset();
                 $.ajax({
                     type: 'post',
                     url: 'comment.php',
