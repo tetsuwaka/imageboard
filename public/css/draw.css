@@ -19,8 +19,8 @@ body {
 }
 
 #header {
-    color: #000000;
-    background: none repeat scroll 0 0 #FFFFFF;
+    color: #FFFFFF;
+    background: none repeat scroll 0 0 #000000;
     border-bottom: 1px solid #888888;
     height: 40px;
     margin: 0;

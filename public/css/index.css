@@ -17,7 +17,7 @@ body {
     margin: auto;
     padding: 0;
     text-align: center;
-    width: 1000px;
+    width: 960px;
 }
 
 #header {
@@ -29,9 +29,26 @@ body {
     padding: 30px;
 }
 
+#doDraw {
+    color:#08233e;
+    font:1.8em MS Pゴシック, arial, sans-serif;;
+    padding:10px;
+    background:url(../img/overlay.png) repeat-x center #ffcc00;background-color:rgba(255,204,0,1);
+    border:1px solid #ffcc00;
+    -moz-border-radius:10px;-webkit-border-radius:10px;border-radius:10px;
+    -moz-box-shadow:inset 0 1px 0 rgba(255,255,255,0.5);-webkit-box-shadow:inset 0 1px 0 rgba(255,255,255,0.5);box-shadow:inset 0 1px 0 rgba(255,255,255,0.5); 
+    cursor:pointer;
+}
+#doDraw:hover {
+    opacity: 0.7;
+}
+
+input:hover{background-color:rgba(255,204,0,0.8);}
+input:active{position:relative;top:2px;}
+
 #live {
-    height: 240px;
-    width: 700px;
+    height: 180px;
+    width: 500px;
     margin-left : auto ; margin-right : auto ;
     padding: 20px;
 }
@@ -44,8 +61,25 @@ body {
     float: right;
 }
 
+.imagetable {
+    border-collapse: collapse;
+    border: 1px solid #888888;
+}
+
+.imagetable th {
+    border-right: 1px solid #888888;
+}
+
 input {
     padding: 3px 10px;
+}
+
+button {
+    padding: 3px 10px;
+}
+
+.comment {
+    padding: 5px 0px;
 }
 
 .comments {
