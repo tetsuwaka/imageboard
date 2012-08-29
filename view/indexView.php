@@ -39,7 +39,7 @@
             <p><h2><?php echo $this->escape($image['title']) . ' - ' .  $this->escape($image['name']); ?></h2></p>
             <table class="imagetable">
             <tr>
-                <td width="480px"><img src="<?php echo $image['imageurl']; ?>"></td>
+                <th width="480px"><img src="<?php echo $image['imageurl']; ?>"></th>
                 <td width="480px"><div class="comments"><div id="comment-<?php echo $image['id']; ?>"><ul>
                 <?php foreach($image['comments'] as $comment): ?>
                     <li><?php echo $this->escape($comment['comment']) . ' - ' . $this->escape($comment['name']); ?></li>
