@@ -54,7 +54,7 @@
                         <input type="hidden" name="threadid" value="<?php echo $image['id']; ?>">
                         名前：<input type="text" name="name">
                         コメント：<input type="text" name="comment">
-                        <button type="button" name="commentSend" onclick="sendComment(<?php echo $image['id']; ?>, <?php echo $ticket; ?>)">送信</button>
+                        <button type="button" name="commentSend" onclick="sendComment(<?php echo $image['id']; ?>, '<?php echo $ticket; ?>')">送信</button>
 <!--                        <input type="submit" value="送信">-->
 <!--                    </form>-->
                     </div>
