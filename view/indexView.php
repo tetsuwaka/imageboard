@@ -30,7 +30,7 @@
             <div id="draw">
                 <form method="POST" action="draw.php">
                 <input type="hidden" name="ticket" value="<?php echo $ticket; ?>">
-                <input type="submit" value="お絵かきをする" style="font-size: 24px;">
+                <input type="submit" value="お絵かきをする" id="doDraw">
                 </form>
             </div>
 
