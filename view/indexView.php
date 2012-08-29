@@ -40,11 +40,11 @@
             <table border="1" align="center">
             <tr>
                 <td width="480px"><img src="<?php echo $image['imageurl']; ?>" border="1"></td>
-                <td width="480px"><div id="comments"><ul>
+                <td width="480px"><div id="comments"><div id="comment-<?php echo $image['id']; ?>"><ul>
                 <?php foreach($image['comments'] as $comment): ?>
                     <li><?php echo $this->escape($comment['comment']) . ' - ' . $this->escape($comment['name']); ?></li>
                 <?php endforeach; ?>
-                </ul></div></td>
+                </ul></div></div></td>
             </tr>
             </table>
                 <div class="comment">
@@ -112,7 +112,7 @@
                         comment: comment
                     },
                     success: function(data){
-                        document.getElementById(threadid).innerHTML = data;
+                        document.getElementById('comment-' + threadid).innerHTML = data;
                     }
                 });
             }
