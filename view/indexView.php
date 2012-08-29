@@ -5,7 +5,7 @@
         <meta http-equiv="Content-Style-Type" content="text/css">
         <meta http-equiv="content-script-type" content="text/javascript">
         <link href="css/index.css" rel="stylesheet" type="text/css">
-        <script type="text/javascript" src="jquery-1.7.2.min.js"></script>
+        <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
         <!--[if IE]><script type="text/javascript" src="js/excanvas.js"></script><![endif]-->
         <title>適当なお絵かき掲示板</title>
     </head>
