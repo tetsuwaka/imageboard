@@ -7,13 +7,13 @@
         <link href="css/index.css" rel="stylesheet" type="text/css">
         <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
         <!--[if IE]><script type="text/javascript" src="js/excanvas.js"></script><![endif]-->
-        <title>適当なお絵かき掲示板</title>
+        <title>共同お絵かき掲示板</title>
     </head>
 
     <body>
         <div id="all">
         <div id="header">
-            <h1>適当なお絵かき掲示板</a></h1>
+            <h1>共同お絵かき掲示板</a></h1>
         </div>
 
         <div id="main">
@@ -39,7 +39,7 @@
             <p><h2><?php echo $this->escape($image['title']) . ' - ' .  $this->escape($image['name']); ?></h2></p>
             <table border="1" align="center">
             <tr>
-                <td width="480px"><img src="<?php echo $image['imageurl']; ?>" border="1"></td>
+                <td width="480px"><img src="<?php echo $image['imageurl']; ?>"></td>
                 <td width="480px"><div class="comments"><div id="comment-<?php echo $image['id']; ?>"><ul>
                 <?php foreach($image['comments'] as $comment): ?>
                     <li><?php echo $this->escape($comment['comment']) . ' - ' . $this->escape($comment['name']); ?></li>

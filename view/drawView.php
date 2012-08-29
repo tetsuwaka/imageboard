@@ -5,12 +5,12 @@
         <meta http-equiv="content-script-type" content="text/javascript">
         <link href="css/draw.css" rel="stylesheet" type="text/css">
         <!--[if IE]><script type="text/javascript" src="js/excanvas.js"></script><![endif]-->
-        <title>適当なお絵かき掲示板</title>
+        <title>共同お絵かき掲示板</title>
     </head>
     <body>
         <div id="all">
         <div id="header">
-            <h1>お絵かきキャンバス</h1>
+            <h1>共同お絵かきキャンバス</h1>
         </div>
 
         <div id="canvas">
