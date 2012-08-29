@@ -19,10 +19,10 @@
         <div id="main">
             <div id="live">
                 <div id="livewrite">
-                    <img src="img/wait.png">
+                    <img src="img/wait2.png">
                 </div>
                 <div id="livefinish">
-                    <canvas id="myCanvas" width="320" height="240">
+                    <canvas id="myCanvas" width="240" height="160">
                     </canvas>
                 </div>
             </div>
@@ -40,7 +40,7 @@
             <table border="1" align="center">
             <tr>
                 <td width="480px"><img src="<?php echo $image['imageurl']; ?>" border="1"></td>
-                <td width="480px"><div id="comments"><div id="comment-<?php echo $image['id']; ?>"><ul>
+                <td width="480px"><div class="comments"><div id="comment-<?php echo $image['id']; ?>"><ul>
                 <?php foreach($image['comments'] as $comment): ?>
                     <li><?php echo $this->escape($comment['comment']) . ' - ' . $this->escape($comment['name']); ?></li>
                 <?php endforeach; ?>
@@ -55,7 +55,6 @@
                         名前：<input type="text" name="name">
                         コメント：<input type="text" name="comment">
                         <button type="button" name="commentSend" onclick="sendComment(<?php echo $image['id']; ?>, '<?php echo $ticket; ?>')">送信</button>
-<!--                        <input type="submit" value="送信">-->
                     </form>
                     </div>
                 </div>
@@ -72,9 +71,9 @@
             var canvas = document.getElementById('myCanvas');
             var ctx = canvas.getContext('2d');
             var img = new Image();
-            img.src = "img/livewait.png";
+            img.src = "img/livewait2.png";
             img.onload = function() {
-                ctx.drawImage(img, 0, 0, 320, 240, 0, 0, 320, 240);
+                ctx.drawImage(img, 0, 0, 240, 160, 0, 0, 240, 160);
             }
             
             function pushSubmit() {
@@ -84,18 +83,18 @@
             socket.on('draw', function (data) {
                 if (data.pagenum == <?php echo $threadnum; ?>) {
                     var element = document.getElementById('livewrite');
-                    element.innerHTML = '<img src="img/livewrite.png">';
+                    element.innerHTML = '<img src="img/livewrite2.png">';
                     element.addEventListener('click', pushSubmit, false);
                 }
                 if (data.act === 'move') {
-                    ctx.clearRect(0, 0, 320, 240);
+                    ctx.clearRect(0, 0, 240, 160);
                     var img = new Image();
                     img.src = data.image;
                     img.onload = function() {
-                        ctx.drawImage(img, 0, 0, 480, 320, 0, 0, 320, 240);
+                        ctx.drawImage(img, 0, 0, 480, 320, 0, 0, 240, 160);
                     }
                     var element = document.getElementById('livewrite');
-                    element.innerHTML = '<img src="img/wait.png">';
+                    element.innerHTML = '<img src="img/wait2.png">';
                 }
             });
             function sendComment(threadid, ticket) {

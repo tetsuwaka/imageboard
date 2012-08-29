@@ -48,7 +48,7 @@ input {
     padding: 3px 10px;
 }
 
-#comments {
+.comments {
     text-align: left;
     margin: auto;
     width: 400px;
