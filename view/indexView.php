@@ -100,8 +100,8 @@
             });
             function sendComment(threadid, ticket) {
                 var ele = document.getElementById(threadid);
-                var name = ele.getElementByName('name')[0];
-                var comment = ele.getElementByName('comment')[0];
+                var name = ele.getElementsByTagName('input')[2].value;
+                var comment = ele.getElementsByTagName('input')[3].value;
                 $.ajax({
                     type: 'post',
                     url: 'comment.php',
