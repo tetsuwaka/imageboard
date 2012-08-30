@@ -81,14 +81,12 @@
 
         <p><h3>セーブしてから投稿してください。</h3></p>
 
-        <br><br>
+        <div id="pagenum">
+            <?php echo $pagenum; ?>
+        </div>
 
         <div id="return">
             <a href="index.php">トップに戻る</a>
-        </div>
-
-        <div id="pagenum">
-            <?php echo $pagenum; ?>
         </div>
 
         <script src="http://tetsuone.rackbox.net:8080/socket.io/socket.io.js"></script>
