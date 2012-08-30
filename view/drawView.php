@@ -70,8 +70,10 @@
             <input type="hidden" name="ticket" value="<?php echo $ticket; ?>">
             <input type="hidden" name="image" value="null">
             <div id="input">
-                タイトル：<input type="text" name="title"> <br>
-                名前：<input type="text" name="name"> <br>
+                <p>タイトル</p>
+                <input type="text" name="title"> <br>
+                <p>名前</p>
+                <input type="text" name="name"> <br>
             </div>
             <input type="submit" value="投稿する" style="font-size: 18px;" onclick="IB.move()">
         </form>
