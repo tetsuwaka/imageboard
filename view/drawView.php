@@ -75,7 +75,7 @@
                 <p>名前</p>
                 <input type="text" name="name"> <br>
             </div>
-            <input type="submit" value="投稿する" style="font-size: 18px;" onclick="IB.move()">
+            <input type="submit" value="投稿する" id="doSubmit" onclick="IB.move()">
         </form>
         </div>
 
