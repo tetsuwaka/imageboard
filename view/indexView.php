@@ -83,7 +83,7 @@
             socket.on('draw', function (data) {
                 if (data.pagenum == <?php echo $threadnum; ?>) {
                     var element = document.getElementById('livewrite');
-                    element.innerHTML = '<img src="img/livewrite2.png">';
+                    element.innerHTML = '<img src="img/livewrite2.png" style="cursor: pointer">';
                     element.addEventListener('click', pushSubmit, false);
                 }
                 if (data.act === 'move') {
