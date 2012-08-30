@@ -65,8 +65,6 @@
             <button type="button" name="save" onclick="IB.save()">save</button>
         </div>
 
-        <br><br>
-
         <div id="form">
         <form method="POST" action="draw.php">
             <input type="hidden" name="ticket" value="<?php echo $ticket; ?>">
