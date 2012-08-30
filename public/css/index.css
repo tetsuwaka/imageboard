@@ -111,3 +111,15 @@ button {
     font-size: 20px;
     padding: 20px;
 }
+
+.comment form {
+    border-left: 5px solid #000000;
+    border-bottom: 1px solid #000000;
+    width: 600px;
+    margin: 0 auto;
+    padding-bottom: 5px;
+}
+
+.comment form input {
+    padding: 3px 1px;
+}
