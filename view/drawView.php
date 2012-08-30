@@ -62,15 +62,17 @@
 
         <div id="buttons">
             <button type="button" name="erase" onclick="IB.erase()">消去</button>
-            <button type="button" name="save" onclick="IB.save()">save</button>
+            <button type="button" name="save" onclick="IB.save()">セーブ</button>
         </div>
 
         <div id="form">
         <form method="POST" action="draw.php">
             <input type="hidden" name="ticket" value="<?php echo $ticket; ?>">
             <input type="hidden" name="image" value="null">
-            タイトル：<input type="text" name="title"> <br>
-            名前：<input type="text" name="name"> <br>
+            <div id="input">
+                タイトル：<input type="text" name="title"> <br>
+                名前：<input type="text" name="name"> <br>
+            </div>
             <input type="submit" value="投稿する" style="font-size: 18px;" onclick="IB.move()">
         </form>
         </div>
