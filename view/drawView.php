@@ -79,11 +79,7 @@
         </form>
         </div>
 
-        <p><h3>セーブしてから投稿してください。</h3></p>
-
-        <div id="pagenum">
-            <?php echo $pagenum; ?>
-        </div>
+        <span id="notice"><p>セーブしてから投稿してください。</p></span>
 
         <div id="return">
             <a href="index.php">トップに戻る</a>
