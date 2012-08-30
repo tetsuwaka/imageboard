@@ -81,6 +81,10 @@
 
         <span id="notice"><p>セーブしてから投稿してください。</p></span>
 
+        <div id="threadnum">
+            Thread Number : <span id="pagenum"><?php echo $pagenum; ?></span>
+        </div>
+
         <div id="return">
             <a href="index.php">トップに戻る</a>
         </div>
