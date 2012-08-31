@@ -1,5 +1,5 @@
 var IB = {
-    color: '0,0,0',
+    color: '0,0,0,1',
     lineWidth: 1,
     width: 480,
     height: 320
@@ -19,8 +19,8 @@ IB.setStatus = function () {
     var can = document.getElementById('setting');
     var ctx = can.getContext('2d');
     ctx.clearRect(0, 0, 100, 100);
-    ctx.strokeStyle = 'rgba(' + IB.color + ',1)';
-    ctx.fillStyle = 'rgba(' + IB.color + ',1)';
+    ctx.strokeStyle = 'rgba(' + IB.color + ')';
+    ctx.fillStyle = 'rgba(' + IB.color + ')';
     ctx.beginPath();
     ctx.arc(50, 50, IB.lineWidth / 2, 0, Math.PI*2, false);
     ctx.stroke();
@@ -54,7 +54,7 @@ function draw(e) {
     var x = e.clientX - can.getBoundingClientRect().left;
     var y = e.clientY - can.getBoundingClientRect().top;
     var context = can.getContext('2d');
-    context.strokeStyle = 'rgba(' + IB.color + ',1)';
+    context.strokeStyle = 'rgba(' + IB.color + ')';
     context.lineWidth = IB.lineWidth;
     context.lineCap = "round";
     context.beginPath();
@@ -79,7 +79,7 @@ socket.on('draw', function(data){
         case "draw":
             var can = document.getElementById('myCanvas');
             var context = can.getContext('2d');
-            context.strokeStyle = 'rgba(' + data.color + ',1)';
+            context.strokeStyle = 'rgba(' + data.color + ')';
             context.lineWidth = data.lineWidth;
             context.lineCap = "round";
             context.beginPath();
@@ -105,6 +105,14 @@ socket.on('draw', function(data){
             break;
     }
 });
+
+IB.setColorStatus = function() {
+    var colors = IB.color.split(',');
+    document.getElementById('r').textContent = colors[0];
+    document.getElementById('g').textContent = colors[1];
+    document.getElementById('b').textContent = colors[2];
+    document.getElementById('a').textContent = colors[3];
+};
 
 IB.changeColor = function(color) {
     IB.color = color;
@@ -159,4 +167,5 @@ IB.moveTop = function() {
     location.href = 'index.php';
 }
 
+IB.setColorStatus();
 IB.setStatus();
