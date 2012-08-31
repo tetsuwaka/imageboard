@@ -41,6 +41,13 @@ body {
     border: 1px solid black;
 }
 
+#setting {
+    border: 1px solid #888888;
+    position: absolute;
+    margin-left: 70px;
+    margin-top: 30px;
+}
+
 #save {
     border: 1px solid #888888;
 }
@@ -57,6 +64,13 @@ button {
     width: 250px;
     margin: 0 auto;
     padding: 10px;
+}
+
+#color input {
+    width: 30px;
+    padding: 0;
+    margin: 2px;
+    text-align: center;
 }
 
 #linewidth {
