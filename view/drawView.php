@@ -48,7 +48,7 @@
                 </tr>
             </table>
             <span id="color">
-            色直指定 : <input type="text" name="r" id="r"><input type="text" name="g" id="g"><input type="text" name="b" id="b"><input type="text" name="a" id="a">
+            <p>色直指定 : <input type="text" name="r" id="r"><input type="text" name="g" id="g"><input type="text" name="b" id="b"><input type="text" name="a" id="a"></p>
             </span>
         </div>
 
