@@ -18,6 +18,7 @@ var hozon = {
 window.addEventListener('click', function() {
     var can = document.getElementById('setting');
     var ctx = can.getContext('2d');
+    ctx.clearRect(0, 0, 100, 100);
     ctx.strokeStyle = 'rgba(' + IB.color + ',1)';
     ctx.beginPath();
     ctx.arc(50, 50, IB.lineWidth / 2, 0, Math.PI*2, false);
