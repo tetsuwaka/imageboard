@@ -15,7 +15,7 @@ var hozon = {
     oldY: 0
 };
 
-window.addEventListener(onclick, function() {
+window.addEventListener('click', function() {
     var can = document.getElementById('setting');
     var ctx = can.getContext('2d');
     ctx.strokeStyle = 'rgba(' + IB.color + ',1)';
