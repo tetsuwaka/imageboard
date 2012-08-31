@@ -17,6 +17,9 @@
             <canvas id="myCanvas" width="480" height="320">
                 HTML5　Canvasに対応したブラウザーを使用してください。
             </canvas>
+            <canvas id="setting" width="160" height="160">
+                HTML5　Canvasに対応したブラウザーを使用してください。
+            </canvas>
             <canvas id="save" width="240" height="160">
                 <script type="text/javascript">
                     var canvas = document.getElementById('save');
