@@ -108,15 +108,16 @@ socket.on('draw', function(data){
 
 IB.setColorStatus = function() {
     var colors = IB.color.split(',');
-    document.getElementById('r').textContent = colors[0];
-    document.getElementById('g').textContent = colors[1];
-    document.getElementById('b').textContent = colors[2];
-    document.getElementById('a').textContent = colors[3];
+    document.getElementById('r').value = colors[0];
+    document.getElementById('g').value = colors[1];
+    document.getElementById('b').value = colors[2];
+    document.getElementById('a').value = colors[3];
 };
 
 IB.changeColor = function(color) {
     IB.color = color;
     IB.setStatus();
+    IB.setColorStatus();
 }
 
 IB.changeLineWidth = function() {
