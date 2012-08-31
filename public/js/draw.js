@@ -15,7 +15,7 @@ var hozon = {
     oldY: 0
 };
 
-document.getElementById('all').addEventListener('click', function() {
+IB.setStatus = function () {
     var can = document.getElementById('setting');
     var ctx = can.getContext('2d');
     ctx.clearRect(0, 0, 100, 100);
@@ -25,7 +25,7 @@ document.getElementById('all').addEventListener('click', function() {
     ctx.arc(50, 50, IB.lineWidth / 2, 0, Math.PI*2, false);
     ctx.stroke();
     ctx.fill();
-}, true);
+}
 
 window.addEventListener('load', function() {
     var can = document.getElementById('myCanvas');
@@ -108,11 +108,13 @@ socket.on('draw', function(data){
 
 IB.changeColor = function(color) {
     IB.color = color;
+    IB.setStatus();
 }
 
 IB.changeLineWidth = function() {
     var dom = document.getElementsByName('lineWidth');
     IB.lineWidth = dom[0].value;
+    IB.setStatus();
 }
 
 IB.erase = function(flag) {
