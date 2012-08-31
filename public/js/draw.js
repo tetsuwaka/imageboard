@@ -158,3 +158,5 @@ IB.move = function() {
 IB.moveTop = function() {
     location.href = 'index.php';
 }
+
+IB.setStatus();
