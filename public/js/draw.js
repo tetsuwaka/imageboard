@@ -106,6 +106,14 @@ socket.on('draw', function(data){
     }
 });
 
+document.getElementById('color').addEventListener('change', function() {
+    var r = document.getElementById('r').value;
+    var g = document.getElementById('g').value;
+    var b = document.getElementById('b').value;
+    var a = document.getElementById('a').value;
+    IB.changeColor(r + ',' + g + ',' + b + ',' + a);
+}, true);
+
 IB.setColorStatus = function() {
     var colors = IB.color.split(',');
     document.getElementById('r').value = colors[0];
