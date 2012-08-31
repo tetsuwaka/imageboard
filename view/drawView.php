@@ -36,15 +36,15 @@
         <div id="colorTemplate">
             <table border=1 width=250 height=30>
                 <tr>
-                    <td bgcolor="red" onClick="IB.changeColor('255,0,0')"></td>
-                    <td bgcolor="blue" onClick="IB.changeColor('0,0,255')"></td>
-                    <td bgcolor="green" onClick="IB.changeColor('0,255,0')"></td>
-                    <td bgcolor="yellow" onClick="IB.changeColor('255,255,0')"></td>
-                    <td bgcolor="purple" onClick="IB.changeColor('255,0,255')"></td>
-                    <td bgcolor="#00FFFF" onClick="IB.changeColor('0,255,255')"></td>
-                    <td bgcolor="black" onClick="IB.changeColor('0,0,0')"></td>
-                    <td bgcolor="white" onClick="IB.changeColor('255,255,255')"></td>
-                    <td bgcolor="gray" onClick="IB.changeColor('192,192,192')"></td>
+                    <td style="background-color: rgba(255, 0, 0, 1)" onClick="IB.changeColor('255,0,0')"></td>
+                    <td style="background-color: rgba(0, 0, 255, 1)" onClick="IB.changeColor('0,0,255')"></td>
+                    <td style="background-color: rgba(0, 255, 0, 1)" onClick="IB.changeColor('0,255,0')"></td>
+                    <td style="background-color: rgba(255, 255, 0, 1)" onClick="IB.changeColor('255,255,0')"></td>
+                    <td style="background-color: rgba(255, 0, 255, 1)" onClick="IB.changeColor('255,0,255')"></td>
+                    <td style="background-color: rgba(0, 255, 255, 1)" onClick="IB.changeColor('0,255,255')"></td>
+                    <td style="background-color: rgba(0, 0, 0, 1)" onClick="IB.changeColor('0,0,0')"></td>
+                    <td style="background-color: rgba(255, 255, 255, 1)" onClick="IB.changeColor('255,255,255')"></td>
+                    <td style="background-color: rgba(192, 192, 192, 1)" onClick="IB.changeColor('192,192,192')"></td>
                 </tr>
             </table>
         </div>
