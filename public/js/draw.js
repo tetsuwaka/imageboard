@@ -15,7 +15,7 @@ var hozon = {
     oldY: 0
 };
 
-window.addEventListener('click', function() {
+document.getElementById('all').addEventListener('click', function() {
     var can = document.getElementById('setting');
     var ctx = can.getContext('2d');
     ctx.clearRect(0, 0, 100, 100);
