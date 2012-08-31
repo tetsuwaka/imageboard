@@ -15,6 +15,16 @@ var hozon = {
     oldY: 0
 };
 
+window.addEventListener(onclick, function() {
+    var can = document.getElementById('setting');
+    var ctx = can.getContext('2d');
+    ctx.strokeStyle = 'rgba(' + IB.color + ',1)';
+    ctx.beginPath();
+    ctx.arc(50, 50, IB.lineWidth / 2, 0, Math.PI*2, false);
+    ctx.stroke();
+    ctx.fill();
+}, true);
+
 window.addEventListener('load', function() {
     var can = document.getElementById('myCanvas');
     can.addEventListener('mousemove', draw, true);

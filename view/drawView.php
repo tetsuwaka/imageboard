@@ -58,7 +58,7 @@
                     <OPTION value="4">4</OPTION>
                     <OPTION value="8">8</OPTION>
                     <OPTION value="16">16</OPTION>
-                    <OPTION value="16">32</OPTION>
+                    <OPTION value="32">32</OPTION>
                 </SELECT>
             </FORM>
         </div>
