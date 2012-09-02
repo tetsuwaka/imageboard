@@ -40,6 +40,7 @@ window.addEventListener('load', function() {
             y: oldY,
             pagenum: pagenum
         });
+        IB.save();
     }, false);
     can.addEventListener('mouseup', function() {
         drawFlag = false;
@@ -72,6 +73,7 @@ function draw(e) {
         color: IB.color,
         lineWidth: IB.lineWidth
     });
+    IB.save();
 }
 
 socket.on('draw', function(data){
@@ -89,15 +91,18 @@ socket.on('draw', function(data){
             context.closePath();
             hozon.oldX = data.x;
             hozon.oldY = data.y;
+            IB.save();
             break;
 
         case "start":
             hozon.oldX = data.x;
             hozon.oldY = data.y;
+            IB.save();
             break;
 
         case "eraze":
             IB.erase(1);
+            IB.save();
             break;
 
         case "move":
