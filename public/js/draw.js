@@ -40,7 +40,6 @@ window.addEventListener('load', function() {
             y: oldY,
             pagenum: pagenum
         });
-        IB.save();
     }, false);
     can.addEventListener('mouseup', function() {
         drawFlag = false;
@@ -73,7 +72,6 @@ function draw(e) {
         color: IB.color,
         lineWidth: IB.lineWidth
     });
-    IB.save();
 }
 
 socket.on('draw', function(data){
@@ -91,18 +89,15 @@ socket.on('draw', function(data){
             context.closePath();
             hozon.oldX = data.x;
             hozon.oldY = data.y;
-            IB.save();
             break;
 
         case "start":
             hozon.oldX = data.x;
             hozon.oldY = data.y;
-            IB.save();
             break;
 
         case "eraze":
             IB.erase(1);
-            IB.save();
             break;
 
         case "move":
@@ -148,23 +143,6 @@ IB.erase = function(flag) {
             act: 'eraze'
         });
     }
-}
-
-// セーブ
-IB.save = function() {
-    var can = document.getElementById('myCanvas');
-    var d = can.toDataURL('image/png');
-
-    var canvas = document.getElementById('save');
-    var ctx = canvas.getContext('2d');
-    ctx.clearRect(0, 0, 240, 160);
-    var img = new Image();
-    img.src = d;
-    img.onload = function() {
-        ctx.drawImage(img, 0, 0, 480, 320, 0, 0, 240, 160);
-    }
-    var tmp = document.getElementsByName('image');
-    tmp[0].value = d;
 }
 
 IB.move = function() {

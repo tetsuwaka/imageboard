@@ -20,17 +20,6 @@
             <canvas id="setting" width="100" height="100">
                 HTML5　Canvasに対応したブラウザーを使用してください。
             </canvas>
-            <canvas id="save" width="240" height="160">
-                <script type="text/javascript">
-                    var canvas = document.getElementById('save');
-                    var ctx = canvas.getContext('2d');
-                    var img = new Image();
-                    img.src = "img/save2.png";
-                    img.onload = function() {
-                        ctx.drawImage(img, 0, 0, 240, 160, 0, 0, 240, 160);
-                    }
-                </script>
-            </canvas>
         </div>
 
         <div id="colorTemplate">
@@ -69,7 +58,6 @@
 
         <div id="buttons">
             <button type="button" name="erase" onclick="IB.erase()">消去</button>
-            <button type="button" name="save" onclick="IB.save()">セーブ</button>
         </div>
 
         <div id="form">
