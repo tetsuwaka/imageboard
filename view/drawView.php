@@ -36,9 +36,6 @@
                     <td style="background-color: rgba(192, 192, 192, 1)" onClick="IB.changeColor('192,192,192,1')"></td>
                 </tr>
             </table>
-        </div>
-
-        <div id="color">
             <p>色直指定 : <input type="text" name="r" id="r"><input type="text" name="g" id="g"><input type="text" name="b" id="b"><input type="text" name="a" id="a"></p>
         </div>
 
