@@ -7,13 +7,13 @@
         <link href="css/index.css" rel="stylesheet" type="text/css">
         <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
         <!--[if IE]><script type="text/javascript" src="js/excanvas.js"></script><![endif]-->
-        <title>共同お絵かき掲示板</title>
+        <title>Live Canvas</title>
     </head>
 
     <body>
         <div id="all">
         <div id="header">
-            <h1>共同お絵かき掲示板</a></h1>
+            <h1>Live Canvas</a></h1>
         </div>
 
         <div id="main">
