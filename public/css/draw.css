@@ -191,6 +191,12 @@ input {
    padding: 0;
 }
 
+#chatline {
+    padding-left: 30px;
+    text-align: left;
+    margin: 0 auto;
+}
+
 #hname {
    width: 100px;
 }
