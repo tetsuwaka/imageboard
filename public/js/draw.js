@@ -159,5 +159,13 @@ IB.moveTop = function() {
     location.href = 'index.php';
 }
 
+IB.sendChat = function() {
+    var name = document.getElementById('hname').value;
+    var comment = document.getElementById('comment').value;
+    var li = document.createElement('li');
+    li.innerHTML = name + ' - ' + comment;
+    document.getElementById('chatline').appendChild(li);
+}
+
 IB.setColorStatus();
 IB.setStatus();

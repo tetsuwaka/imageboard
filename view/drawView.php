@@ -4,6 +4,7 @@
         <meta http-equiv="Content-Style-Type" content="text/css">
         <meta http-equiv="content-script-type" content="text/javascript">
         <link href="css/draw.css" rel="stylesheet" type="text/css">
+        <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
         <!--[if IE]><script type="text/javascript" src="js/excanvas.js"></script><![endif]-->
         <title>Live Canvas</title>
     </head>
@@ -94,13 +95,15 @@
         <div id="right">
             <div id="chat">
                 <div id="chatbody">
+                    <ul id="chatline">
+                    </ul>
                 </div>
                 <div id="chatform">
                     <p>名前:
                     <input type="text" name="hname" id="hname"></p>
                     <p>コメント:
                     <input type="text" name="comment" id="comment"></p>
-                    <button id="inputchat">入力</button>
+                    <button id="inputchat" onclick="IB.sendChat()">入力</button>
                 </div>
             </div>
         </div>
