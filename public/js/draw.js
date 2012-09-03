@@ -176,6 +176,8 @@ IB.sendChat = function() {
         name: name,
         comment: comment
     });
+    document.getElementById('hname').value = '';
+    document.getElementById('comment').value = '';
 }
 
 IB.setColorStatus();
