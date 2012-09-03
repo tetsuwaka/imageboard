@@ -103,6 +103,12 @@ socket.on('draw', function(data){
         case "move":
             IB.moveTop();
             break;
+        
+        case "chat":
+            var li = document.createElement('li');
+            li.innerHTML = data.name + ' - ' + data.comment;
+            document.getElementById('chatline').appendChild(li);
+            break;
     }
 });
 
@@ -165,6 +171,11 @@ IB.sendChat = function() {
     var li = document.createElement('li');
     li.innerHTML = name + ' - ' + comment;
     document.getElementById('chatline').appendChild(li);
+    socket.emit('draw', {
+        act: 'chat',
+        name: name,
+        comment: comment
+    });
 }
 
 IB.setColorStatus();
