@@ -13,17 +13,23 @@
             <h1>Live Canvas</h1>
         </div>
 
-        <div id="canvas">
-            <canvas id="myCanvas" width="480" height="320">
+        <div id="wrapper">
+        <div id="left">
+            <canvas id="setting" width="100" height="100">
+
                 HTML5　Canvasに対応したブラウザーを使用してください。
             </canvas>
-            <canvas id="setting" width="100" height="100">
+        </div>
+        
+        <div id="center">
+        <div id="canvas">
+            <canvas id="myCanvas" width="480" height="320">
                 HTML5　Canvasに対応したブラウザーを使用してください。
             </canvas>
         </div>
 
         <div id="colorTemplate">
-            <table border=1 width=250 height=30>
+            <table>
                 <tr>
                     <td style="background-color: rgba(255, 0, 0, 1)" onClick="IB.changeColor('255,0,0,1')"></td>
                     <td style="background-color: rgba(0, 0, 255, 1)" onClick="IB.changeColor('0,0,255,1')"></td>
@@ -80,6 +86,23 @@
 
         <div id="return">
             <a href="index.php">トップに戻る</a>
+        </div>
+
+        </div>
+        </div>
+
+        <div id="right">
+            <div id="chat">
+                <div id="chatbody">
+                </div>
+                <div id="chatform">
+                    <p>名前:
+                    <input type="text" name="hname" id="hname"></p>
+                    <p>コメント:
+                    <input type="text" name="comment" id="comment"></p>
+                    <button id="inputchat">入力</button>
+                </div>
+            </div>
         </div>
 
         <script src="http://tetsuone.rackbox.net:8080/socket.io/socket.io.js"></script>

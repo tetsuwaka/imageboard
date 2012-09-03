@@ -17,6 +17,8 @@ body {
     padding: 0;
     text-align: center;
     width: 1000px;
+    height: 100%;
+    min-height: 850px;
 }
 
 #header {
@@ -28,10 +30,25 @@ body {
     padding: 30px;
 }
 
+#left {
+    width: 250px;
+    float: left;
+}
+
+#center {
+    width: 500px;
+    margin: 0 auto;
+    float: left;
+}
+
+#right {
+   width: 250px;
+   float: right;
+}
+
 #canvas {
     padding-top: 10px;
     height: 320px;
-    width: 1000px;
 }
 
 #myCanvas {
@@ -42,9 +59,7 @@ body {
 
 #setting {
     border: 1px solid #888888;
-    position: absolute;
-    margin-left: 70px;
-    margin-top: 30px;
+    margin-top: 100px;
 }
 
 #save {
@@ -63,6 +78,17 @@ button {
     width: 250px;
     margin: 0 auto;
     padding: 10px;
+}
+
+#colorTemplate table {
+   border-collapse: collapse;
+   width: 270px;
+   height: 30px;
+}
+
+#colorTemplate td {
+   border: 1px solid #000000;
+   width: 30px; 
 }
 
 #color input {
@@ -132,3 +158,43 @@ button {
 }
 #doSubmit:hover{opacity: 0.7;}
 #doSubmit:active{position:relative;top:2px;}
+
+
+#chat {
+   width: 230px;
+   height: 530px;
+   margin: 0 auto;
+   margin-top: 10px;
+   border: 1px solid #888888;
+}
+
+#chatbody {
+   height: 400px;
+   border: 1px solid #888888;
+   margin: 5px;
+}
+
+#chatform {
+   margin: 5px;
+   border: 1px solid #888888;
+}
+
+#chatform p {
+   padding: 5px;
+   text-align: left;
+   width: 200px;
+   margin: 0 auto;
+}
+
+input {
+   width: 150px;
+   padding: 0;
+}
+
+#hname {
+   width: 100px;
+}
+
+#comment {
+   width: 200px;
+}
