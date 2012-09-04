@@ -103,12 +103,9 @@ socket.on('draw', function(data){
         case "move":
             IB.moveTop();
             break;
-        
+
         case "chat":
-            var span = document.createElement('span');
-            span.innerHTML = name + ' - ' + comment;
-            span.className = 'cell';
-            document.getElementById('chatinner').appendChild(span);
+            IB.inputComment(data.comment, data.name);
             break;
     }
 });
@@ -166,16 +163,31 @@ IB.moveTop = function() {
     location.href = 'index.php';
 }
 
+IB.inputComment = function(comment, name) {
+    var div = document.createElement('div');
+    div.className = 'cell';
+    var spanName = document.createElement('span');
+    spanName.className = 'name';
+    spanName.innerHTML = name;
+    var spanComment = document.createElement('span');
+    spanComment.className = 'comment';
+    spanComment.innerHTML = comment;
+
+    div.appendChild(comment);
+    div.appendChild(spanName);
+
+    document.getElementById('chatinner').appendChild(div);
+}
+
 IB.sendChat = function() {
     var name = document.getElementById('hname').value;
     var comment = document.getElementById('comment').value;
     if (comment === '') {
         return;
     }
-    var span = document.createElement('span');
-    span.innerHTML = name + ' - ' + comment;
-    span.className = 'cell';
-    document.getElementById('chatinner').appendChild(span);
+
+    IB.inputComment(comment, name);
+
     socket.emit('draw', {
         act: 'chat',
         name: name,
