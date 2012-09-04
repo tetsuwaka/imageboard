@@ -105,9 +105,10 @@ socket.on('draw', function(data){
             break;
         
         case "chat":
-            var li = document.createElement('li');
-            li.innerHTML = data.name + ' - ' + data.comment;
-            document.getElementById('chatline').appendChild(li);
+            var span = document.createElement('span');
+            span.innerHTML = name + ' - ' + comment;
+            span.className = 'cell';
+            document.getElementById('chatinner').appendChild(span);
             break;
     }
 });
@@ -168,15 +169,18 @@ IB.moveTop = function() {
 IB.sendChat = function() {
     var name = document.getElementById('hname').value;
     var comment = document.getElementById('comment').value;
-    var li = document.createElement('li');
-    li.innerHTML = name + ' - ' + comment;
-    document.getElementById('chatline').appendChild(li);
+    if (comment === '') {
+        return;
+    }
+    var span = document.createElement('span');
+    span.innerHTML = name + ' - ' + comment;
+    span.className = 'cell';
+    document.getElementById('chatinner').appendChild(span);
     socket.emit('draw', {
         act: 'chat',
         name: name,
         comment: comment
     });
-    document.getElementById('hname').value = '';
     document.getElementById('comment').value = '';
 }
 

@@ -95,8 +95,10 @@
         <div id="right">
             <div id="chat">
                 <div id="chatbody">
-                    <ul id="chatline">
-                    </ul>
+                    <div id="chatcontainer">
+                        <div id="chatinner">
+                        </div>
+                    </div>
                 </div>
                 <div id="chatform">
                     <p>名前:
