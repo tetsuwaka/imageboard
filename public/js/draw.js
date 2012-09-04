@@ -173,7 +173,7 @@ IB.inputComment = function(comment, name) {
     spanComment.className = 'comment';
     spanComment.innerHTML = comment;
 
-    div.appendChild(comment);
+    div.appendChild(spanComment);
     div.appendChild(spanName);
 
     document.getElementById('chatinner').appendChild(div);
