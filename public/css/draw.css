@@ -198,9 +198,37 @@ input {
 }
 
 #hname {
-   width: 100px;
+    width: 100px;
 }
 
 #comment {
-   width: 200px;
+    width: 200px;
+}
+
+#chatcontainer {
+    margin: 0 auto;
+    width: 210px;
+    height: 400px;
+    overflow: scroll;
+}
+
+#chatinner {
+   text-align: left;
+   width: 500px;
+}
+
+.cell {
+   display: block;
+   padding: 2px;
+   border-bottom: 1px solid #DDDDDD;
+}
+
+span.comment {
+    font-size: 12pt;
+    width: 150px;
+    display: inline-block;
+}
+
+span.name {
+    display: inline-block;
 }
