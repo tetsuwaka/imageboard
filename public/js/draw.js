@@ -176,8 +176,9 @@ IB.inputComment = function(comment, name) {
     div.appendChild(spanComment);
     div.appendChild(spanName);
 
-    document.getElementById('chatinner').appendChild(div);
-    document.getElementById('chatcontainer').scrollByLines(1);
+    var inner = document.getElementById('chatinner')
+    inner.appendChild(div);
+    document.getElementById('chatcontainer').scrollTop = inner.scrollHeight;
 }
 
 IB.sendChat = function() {
