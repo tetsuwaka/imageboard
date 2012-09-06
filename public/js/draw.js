@@ -208,7 +208,7 @@ IB.sendChat = function() {
     document.getElementById('comment').value = '';
 }
 
-IB.blink = function (){
+IB.blink = function() {
     if (document.all('message').style.visibility == 'visible') {
         document.all.message.style.visibility = 'hidden';
     } else {
@@ -223,9 +223,15 @@ IB.blink = function (){
     }
 }
 
+IB.hidden = function() {
+    document.all.message.style.visibility = 'hidden';
+    document.all.complete.style.visibility = 'hidden';
+}
+
 socket.on('complete', function(data){
     document.getElementById('message').innerHTML = '接続完了';
     IB.end = true;
+    setTimeout("IB.hidden()", 2000);
 });
 
 IB.setColorStatus();
