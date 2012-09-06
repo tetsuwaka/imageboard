@@ -209,13 +209,15 @@ IB.sendChat = function() {
 }
 
 IB.blink = function (){
-    if (document.all('message').style.visibility == 'visible') {
-        document.all.message.style.visibility = 'hidden';
+    var vis = document.all('message').style.visibility;
+    var ele = document.all.message.style.visibility;
+    if (vis == 'visible') {
+        ele = 'hidden';
     } else {
-        document.all.message.style.visibility = 'visible';
+        ele = 'visible';
     }
     if (IB.end) {
-        document.all.message.style.visibility = 'visible';
+        ele = 'visible';
         document.all.complete.style.color = 'blue';
         return;
     } else {
