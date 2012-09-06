@@ -216,7 +216,7 @@ IB.blink = function (){
     }
     if (IB.end) {
         document.all.message.style.visibility = 'visible';
-        document.all.message.style.color = 'blue';
+        document.all.complete.style.color = 'blue';
         return;
     } else {
         setTimeout("IB.blink()", 800);
