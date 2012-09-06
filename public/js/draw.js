@@ -207,5 +207,18 @@ IB.sendChat = function() {
     document.getElementById('comment').value = '';
 }
 
+IB.blink = function (){
+    if (document.all('message').style.visibility == 'visible') {
+        document.all.message.style.visibility = 'hidden';
+    } else {
+        document.all.message.style.visibility = 'visible';
+    }
+    setTimeout("IB.blink()", 800);
+}
+
+socket.on('complete', function(data){
+    document.getElementById('message').innerHTML = '接続完了';
+});
+
 IB.setColorStatus();
 IB.setStatus();

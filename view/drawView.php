@@ -17,9 +17,11 @@
         <div id="wrapper">
         <div id="left">
             <canvas id="setting" width="100" height="100">
-
                 HTML5　Canvasに対応したブラウザーを使用してください。
             </canvas>
+            <div id="complete">
+                <span id="message">接続中</span>
+            </div>
         </div>
         
         <div id="center">
