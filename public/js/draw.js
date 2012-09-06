@@ -152,6 +152,8 @@ IB.erase = function(flag) {
 IB.move = function() {
     var can = document.getElementById('myCanvas');
     var d = can.toDataURL('image/png');
+    var ele = document.getElementByName('image');
+    ele[0].value = d;
     socket.emit('draw', {
         act: 'move',
         image: d
