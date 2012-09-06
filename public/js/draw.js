@@ -2,7 +2,8 @@ var IB = {
     color: '0,0,0,1',
     lineWidth: 1,
     width: 480,
-    height: 320
+    height: 320,
+    end: false
 };
 
 var pagenum = document.getElementById('pagenum').innerHTML;
@@ -213,12 +214,18 @@ IB.blink = function (){
     } else {
         document.all.message.style.visibility = 'visible';
     }
-    setTimeout("IB.blink()", 800);
+    if (IB.end) {
+        return;
+    } else {
+        setTimeout("IB.blink()", 800);
+    }
 }
 
 socket.on('complete', function(data){
     document.getElementById('message').innerHTML = '接続完了';
+    IB.end = true;
 });
 
 IB.setColorStatus();
 IB.setStatus();
+IB.blink();
