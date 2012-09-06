@@ -154,7 +154,7 @@ IB.erase = function(flag) {
 IB.save = function() {
     var can = document.getElementById('myCanvas');
     var d = can.toDataURL('image/png');
-    var ele = document.getElementByName('image');
+    var ele = document.getElementsByName('image');
     ele[0].value = d;
 }
 
