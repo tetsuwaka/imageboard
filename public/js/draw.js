@@ -72,6 +72,7 @@ function draw(e) {
         color: IB.color,
         lineWidth: IB.lineWidth
     });
+    IB.save();
 }
 
 socket.on('draw', function(data){
@@ -89,6 +90,7 @@ socket.on('draw', function(data){
             context.closePath();
             hozon.oldX = data.x;
             hozon.oldY = data.y;
+            IB.save();
             break;
 
         case "start":
@@ -149,11 +151,16 @@ IB.erase = function(flag) {
     }
 }
 
-IB.move = function() {
+IB.save = function() {
     var can = document.getElementById('myCanvas');
     var d = can.toDataURL('image/png');
     var ele = document.getElementByName('image');
     ele[0].value = d;
+}
+
+IB.move = function() {
+    var can = document.getElementById('myCanvas');
+    var d = can.toDataURL('image/png');
     socket.emit('draw', {
         act: 'move',
         image: d
