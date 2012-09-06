@@ -62,6 +62,14 @@ body {
     margin-top: 100px;
 }
 
+#complete {
+    border: 1px solid;
+    padding: 5px;
+    margin: 50px;
+    font-size: 24px;
+    color: red;
+}
+
 #save {
     border: 1px solid #888888;
 }
@@ -176,6 +184,7 @@ button {
 
 #chatform {
    margin: 5px;
+   margin-top: 10px;
    border: 1px solid #888888;
 }
 
