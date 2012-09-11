@@ -70,7 +70,6 @@ IB.draw = function(e) {
         color: IB.color,
         lineWidth: IB.lineWidth
     });
-    IB.save();
 }
 
 socket.on('draw', function(data){
@@ -88,7 +87,6 @@ socket.on('draw', function(data){
             context.closePath();
             IB.hozon.oldX = data.x;
             IB.hozon.oldY = data.y;
-            IB.save();
             break;
 
         case "start":
