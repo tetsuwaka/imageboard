@@ -70,7 +70,7 @@
         </div>
 
         <div id="form">
-        <form method="POST" action="draw.php">
+        <form method="POST" action="draw.php" id="submit">
             <input type="hidden" name="ticket" value="<?php echo $ticket; ?>">
             <input type="hidden" name="image" value="null">
             <div id="input">
@@ -79,7 +79,7 @@
                 <p>名前</p>
                 <input type="text" name="name"> <br>
             </div>
-            <button type="button" name="submit" id="doSubmit" onclick="">投稿する</button>
+            <button type="button" id="doSubmit" onclick="IB.submit()">投稿する</button>
         </form>
         </div>
 

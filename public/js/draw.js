@@ -225,6 +225,12 @@ IB.hidden = function() {
     document.all.complete.style.visibility = 'hidden';
 }
 
+IB.submit = function() {
+    IB.move();
+    IB.save();
+    document.getElementById('submit').submit();
+}
+
 socket.on('complete', function(data){
     document.getElementById('message').innerHTML = '接続完了';
     IB.end = true;
