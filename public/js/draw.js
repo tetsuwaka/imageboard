@@ -3,18 +3,15 @@ var IB = {
     lineWidth: 1,
     width: 480,
     height: 320,
-    end: false
+    end: false,
+    pagenum: document.getElementById('pagenum').innerHTML,
+    dragFlag: false,
+    oldX: 0,
+    oldY: 0,
+    hozon: {oldX: 0, oldY: 0}
 };
 
-var pagenum = document.getElementById('pagenum').innerHTML;
-var drawFlag = false;
-var oldX = 0;
-var oldY = 0;
 var socket = io.connect('http://tetsuone.rackbox.net:8080');
-var hozon = {
-    oldX: 0,
-    oldY: 0
-};
 
 IB.setStatus = function () {
     var can = document.getElementById('setting');
@@ -32,23 +29,23 @@ window.addEventListener('load', function() {
     var can = document.getElementById('myCanvas');
     can.addEventListener('mousemove', draw, true);
     can.addEventListener('mousedown', function(e) {
-        drawFlag = true;
-        oldX = e.clientX - can.getBoundingClientRect().left;
-        oldY = e.clientY - can.getBoundingClientRect().top;
+        IB.drawFlag = true;
+        IB.oldX = e.clientX - can.getBoundingClientRect().left;
+        IB.oldY = e.clientY - can.getBoundingClientRect().top;
         socket.emit('draw', {
             act: 'start',
-            x: oldX,
-            y: oldY,
-            pagenum: pagenum
+            x: IB.oldX,
+            y: IB.oldY,
+            pagenum: IB.pagenum
         });
     }, false);
     can.addEventListener('mouseup', function() {
-        drawFlag = false;
+        IB.drawFlag = false;
     }, false)
 }, true);
 
-function draw(e) {
-    if (!drawFlag) {
+IB.draw = function(e) {
+    if (!IB.drawFlag) {
         return;
     }
     var can = document.getElementById('myCanvas');
@@ -59,12 +56,12 @@ function draw(e) {
     context.lineWidth = IB.lineWidth;
     context.lineCap = "round";
     context.beginPath();
-    context.moveTo(oldX, oldY);
+    context.moveTo(IB.oldX, IB.oldY);
     context.lineTo(x, y);
     context.stroke();
     context.closePath();
-    oldX = x;
-    oldY = y;
+    IB.oldX = x;
+    IB.oldY = y;
 
     socket.emit('draw', {
         act: 'draw',
@@ -85,18 +82,18 @@ socket.on('draw', function(data){
             context.lineWidth = data.lineWidth;
             context.lineCap = "round";
             context.beginPath();
-            context.moveTo(hozon.oldX, hozon.oldY);
+            context.moveTo(IB.hozon.oldX, IB.hozon.oldY);
             context.lineTo(data.x, data.y);
             context.stroke();
             context.closePath();
-            hozon.oldX = data.x;
-            hozon.oldY = data.y;
+            IB.hozon.oldX = data.x;
+            IB.hozon.oldY = data.y;
             IB.save();
             break;
 
         case "start":
-            hozon.oldX = data.x;
-            hozon.oldY = data.y;
+            IB.hozon.oldX = data.x;
+            IB.hozon.oldY = data.y;
             break;
 
         case "eraze":
