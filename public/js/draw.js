@@ -13,7 +13,7 @@ var IB = {
 
 var socket = io.connect('http://tetsuone.rackbox.net:8080');
 
-IB.setStatus = function () {
+IB.setStatus = function() {
     var can = document.getElementById('setting');
     var ctx = can.getContext('2d');
     ctx.clearRect(0, 0, 100, 100);

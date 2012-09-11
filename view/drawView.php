@@ -79,7 +79,7 @@
                 <p>名前</p>
                 <input type="text" name="name"> <br>
             </div>
-            <input type="submit" value="投稿する" id="doSubmit" onclick="IB.move()">
+            <button type="button" name="submit" id="doSubmit" onclick="">投稿する</button>
         </form>
         </div>
 
