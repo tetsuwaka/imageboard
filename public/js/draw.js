@@ -27,7 +27,7 @@ IB.setStatus = function() {
 
 window.addEventListener('load', function() {
     var can = document.getElementById('myCanvas');
-    can.addEventListener('mousemove', draw, true);
+    can.addEventListener('mousemove', IB.draw, true);
     can.addEventListener('mousedown', function(e) {
         IB.drawFlag = true;
         IB.oldX = e.clientX - can.getBoundingClientRect().left;
