@@ -1,4 +1,4 @@
-var MAX_STACK = 100; // 最大保存ストロークスタック数
+var MAX_STACK = 50; // 最大保存ストロークスタック数
 
 // canvasを作成
 var Canvas = require('canvas')
@@ -11,10 +11,10 @@ var app = require('express').createServer()
 
 app.listen(8080);
 
-strokeStack = [];            // ストロークスタック
-imageStack = [];             // イメージスタック
-strokeAllStack = [];         // 全てのストロークスタック
-hozon = {oldX: 0, oldY: 0};  // ストローク開始位置の保存
+var strokeStack = [];            // ストロークスタック
+var imageStack = [];             // イメージスタック
+var strokeAllStack = [];         // 全てのストロークスタック
+var hozon = {oldX: 0, oldY: 0};  // ストローク開始位置の保存
 
 
 function draw(data) {
