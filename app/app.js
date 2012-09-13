@@ -59,6 +59,7 @@ io.sockets.on('connection', function (socket) {
 
         if (data.act === 'eraze' || data.act === 'move') {
             strokeStack = [];
+            imageStack = [];
         } else if (data.act === 'draw') {
             draw(data);
         } else if (data.act === 'start') {
