@@ -235,6 +235,16 @@ socket.on('complete', function(data){
     setTimeout("IB.hidden()", 2000);
 });
 
+socket.on('image', function(data){
+    var can = document.getElementById('myCanvas');
+    var ctx = can.getContext('2d');
+    var img = new Image();
+    img.src = data.image;
+    img.onload = function() {
+        ctx.drawImage(img, 0, 0, 480, 320, 0, 0, 480, 320);
+    }
+});
+
 IB.setColorStatus();
 IB.setStatus();
 IB.blink();

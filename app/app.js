@@ -1,25 +1,73 @@
+var MAX_STACK = 100; // 最大保存ストロークスタック数
+
+// canvasを作成
+var Canvas = require('canvas')
+  , canvas = new Canvas(480, 320)
+  , ctx = canvas.getContext('2d');
+
+// socket.ioを用いてwebscoketサーバ作成
 var app = require('express').createServer()
 , io = require('socket.io').listen(app);
 
 app.listen(8080);
-drawList = [];
+
+strokeStack = [];            // ストロークスタック
+imageStack = [];             // イメージスタック
+strokeAllStack = [];         // 全てのストロークスタック
+hozon = {oldX: 0, oldY: 0};  // ストローク開始位置の保存
+
+
+function draw(data) {
+    ctx.strokeStyle = 'rgba(' + data.color + ')';
+    ctx.lineWidth = data.lineWidth;
+    ctx.lineCap = "round";
+    ctx.beginPath();
+    ctx.moveTo(hozon.oldX, hozon.oldY);
+    ctx.lineTo(data.x, data.y);
+    ctx.stroke();
+    ctx.closePath();
+    hozon.oldX = data.x;
+    hozon.oldY = data.y;
+}
+
+function drawStart(data) {
+    hozon.oldX = data.x;
+    hozon.oldY = data.y;
+}
+
 
 io.sockets.on('connection', function (socket) {
 
+    // 接続完了を知らせる
     socket.emit('complete', 'complete');
 
-    if (drawList.length > 0) {
-        for (var i in drawList) {
-            socket.emit('draw', drawList[i]);
+    // 接続時に、ストロークスタックを送る
+    if (strokeStack.length > 0 || imageStack.length > 0) {
+        if (imageStack.length > 0) {
+            socket.emit('image', imageStack[imageStack.length - 1]);
+        }
+        for (var i in strokeStack) {
+            socket.emit('draw', strokeStack[i]);
         }
     }
 
+    // データが送られてきたときの処理
     socket.on('draw', function(data){
-        drawList.push(data);
+        strokeStack.push(data);
+        strokeAllStack.push(data);
         socket.broadcast.emit('draw', data);
+
         if (data.act === 'eraze' || data.act === 'move') {
-            drawList = [];
+            strokeStack = [];
+        } else if (data.act === 'draw') {
+            draw(data);
+        } else if (data.act === 'start') {
+            drawStart(data);
+        }
+
+        if (strokeStack.length === MAX_STACK) {
+            imageStack.push(canvas.toDataURL());
+            strokeStack = [];
         }
     });
 });
-
