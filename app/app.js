@@ -44,7 +44,7 @@ io.sockets.on('connection', function (socket) {
     // 接続時に、ストロークスタックを送る
     if (strokeStack.length > 0 || imageStack.length > 0) {
         if (imageStack.length > 0) {
-            socket.emit('image', imageStack[imageStack.length - 1]);
+            socket.emit('image', {image: imageStack[imageStack.length - 1]});
         }
         for (var i in strokeStack) {
             socket.emit('draw', strokeStack[i]);
