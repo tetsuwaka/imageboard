@@ -13,6 +13,7 @@ app.listen(8080);
 
 var strokeStack = [];            // ストロークスタック
 var imageStack = [];             // イメージスタック
+var chatStack = [];              // チャットスタック
 var strokeAllStack = [];         // 全てのストロークスタック
 var hozon = {oldX: 0, oldY: 0};  // ストローク開始位置の保存
 
@@ -51,8 +52,15 @@ io.sockets.on('connection', function (socket) {
         }
     }
 
-    // データが送られてきたときの処理
-    socket.on('draw', function(data){
+    // 接続時にチャットスタックを送る
+    if (chatStack.length > 0) {
+        for (var i in chatStack) {
+            socket.emit('chat', chatStack[i]);
+        }
+    }
+
+    // drawデータが送られてきたときの処理
+    socket.on('draw', function(data) {
         strokeStack.push(data);
         strokeAllStack.push(data);
         socket.broadcast.emit('draw', data);
@@ -60,6 +68,9 @@ io.sockets.on('connection', function (socket) {
         if (data.act === 'eraze' || data.act === 'move') {
             strokeStack = [];
             imageStack = [];
+            if (data.act === 'move') {
+                chatStack = [];
+            }
         } else if (data.act === 'draw') {
             draw(data);
         } else if (data.act === 'start') {
@@ -70,5 +81,11 @@ io.sockets.on('connection', function (socket) {
             imageStack.push(canvas.toDataURL());
             strokeStack = [];
         }
+    });
+
+    // chatデータが送られてきたときの処理
+    socket.on('chat', function(data) {
+        chatStack.push(data);
+        socket.broadcast.emit('chat', data);
     });
 });

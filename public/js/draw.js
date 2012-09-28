@@ -72,7 +72,7 @@ IB.draw = function(e) {
     });
 }
 
-socket.on('draw', function(data){
+socket.on('draw', function(data) {
     switch (data.act) {
         case "draw":
             var can = document.getElementById('myCanvas');
@@ -101,11 +101,11 @@ socket.on('draw', function(data){
         case "move":
             IB.moveTop();
             break;
-
-        case "chat":
-            IB.inputComment(data.comment, data.name);
-            break;
     }
+});
+
+socket.on('chat', function(data) {
+    IB.inputComment(data.comment, data.name);
 });
 
 document.getElementById('color').addEventListener('change', function() {
@@ -195,8 +195,7 @@ IB.sendChat = function() {
 
     IB.inputComment(comment, name);
 
-    socket.emit('draw', {
-        act: 'chat',
+    socket.emit('chat', {
         name: name,
         comment: comment
     });
@@ -229,13 +228,13 @@ IB.submit = function() {
     document.getElementById('submit').submit();
 }
 
-socket.on('complete', function(data){
+socket.on('complete', function(data) {
     document.getElementById('message').innerHTML = '接続完了';
     IB.end = true;
     setTimeout("IB.hidden()", 2000);
 });
 
-socket.on('image', function(data){
+socket.on('image', function(data) {
     var can = document.getElementById('myCanvas');
     var ctx = can.getContext('2d');
     var img = new Image();
